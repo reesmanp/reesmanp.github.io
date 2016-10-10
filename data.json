@@ -3,167 +3,36 @@
 		"1": "My name is Paul Reesman and I have a long and colorful history filled with experience, creativity, curiosity, and leadership. Originally from Phoenix, Arizona I joined the army after high school and became a member of the elite unit known as 'Rangers' up in Washington state. Throughout my tenure I advanced to the rank of Sergeant and deployed to Afghanistan four times. Upon separating from the armed forces, I was left with the same thoughts of nearly any other veteran, 'What next?'",
         "2": "I looked toward college as the next chapter of my life started to unfold. Starting off at Arizona State University, I felt that the school was not a good match for who I was. I then transferred to Oregon State University and continued on my track pursuing a four year degree in computer science. It only took me three years from the end of my enlistment to be granted my degree. During my last term, I frantically started applying to jobs so I had one waiting for me when I graduated.",
         "3": "Immediately after graduating from college, I received an email from Seattle Children's Hospital offering me a position as an application developer up in Seattle. I took this job without question and here I am today.",
-        "4": "I am one of the founders of Lender and I have been developing my own programming language called #. I am looking forward to grad school as my interests are broad: Artificial Intelligence, Parallelization/Distributed Computing, and Compiler Design."
+        "4": "I am one of the founders of an app called Lender. Lender is a platform for people to administer nano-loans anonymously. This application is currently under development and the release of Alpha testing is imminent. You can find more at www.wearelender.com",
+		"5": "Lastly, I am looking forward to grad school as my interests are broad: Artificial Intelligence, Parallelization/Distributed Computing (Including Cloud and Enterprise computing), and Compiler Design."
 	},
-	"IHE Reference Documentation": {
-		"[ITI TF-1] IHE IT Infrastructure Technical Framework, Volume 1, Integration Profiles, Revision 8.0 – Final Text, August 19, 2011, Sections 5 Patient Identifier Cross-referencing (PIX), 9 Audit Trail and Node Authentication (ATNA), 10 Cross-Enterprise Document Sharing (XDS.b), 23 Patient Identifier Cross-referencing HL7 V3 (PIXV3).": "http://www.ihe.net/Technical_Framework/upload/IHE_ITI_TF_Rev8-0_Vol1_FT_2011-08-19.pdf",
-        "[ITI TF-2a] IHE IT Infrastructure Technical Framework, Volume 2a, Transactions Part A – Sections 3.1 – 3.28, Revision 8.0 – Final Text, August 19, 2011, Sections 3.8 Patient Identity Feed, 3.18 Registry Stored Query, and 3.20 Record Audit Event": "http://www.ihe.net/Technical_Framework/upload/IHE_ITI_TF_Rev8-0_Vol2a_FT_2011-08-19.pdf",
-        "[ITI TF-2b] IHE IT Infrastructure Technical Framework, Volume 2b, Transactions Part B – Sections 3.29  3.51, Revision 8.0 – Final Text, August 19, 2011, Sections 3.41 Provide and Register Document Set-b, 3.42 Register Document Set-b, 3-43 Retrieve Document Set, and 3.45 PIXV3 Query.": "http://www.ihe.net/Technical_Framework/upload/IHE_ITI_TF_Rev8-0_Vol2b_FT_2011-08-19.pdf",
-        "[ITI TF-3] Cross-Transactions Specifications and Content Specifications, Revision 8.0 – Final Text, August 19, 2011.": "http://www.ihe.net/Technical_Framework/upload/IHE_ITI_TF_Rev8-0_Vol3_FT_2011-08-19.pdf",
-        "HL7 Implementation Guide for CDA® Release 2: IHE Health Story Consolidation, Release 1.1 - US Realm": "http://www.hl7.org/implement/standards/product_brief.cfm?product_id=258"
+	"Portfolio": {
+		"Current Projects": {
+			"1": "All of my current projects and most of my completed projects' source code can be found at my github <a href=\"https://github.com/reesmanp\" target=\"_blank\">repository</a>",
+			"2": "I am co-founder and lead backend developer for a new an upcoming app called Lender. The source code lives in a private repo on GitHub, thus I cannot share it with you. To learn more about Lender, visit us at www.wearelender.com or visit us on Facebook: www.facebook.com/wearelender/ or even follow us on Twitter at @WeAreLender",
+			"3": "I am currently building a ReactJS program to be used in festival booths to help with front-end transactions and kitchen area accountability. This is being built with TypeScript and will be deployed as a standalone application.",
+			"4": "I am developing my own programming language called #. Since that symbol has several pronunciations (mostly depending on which generation you relate to), it has no standard verbal name. This will be a compiled language that will hopefully be be completely customizable with what I am calling attributes."
+		},
+		"Completed Projects": {
+			"1": "I was employed as the 'Senior Computer Science Expert' for a laser targeting device prototype that was being researched at the Oregon State University which was funded by the United States Army. I designed several User Interfaces to help find the most 'intuitive' format based off of rel soldiers feedback. January 2015 - December 2015",
+			"2": "For my Senior Design Project, I was assigned into a random group of 4 students and we were randomly assigned a real life project sponsored by an actual company. I was assigned to build a Splunk Application for Elemental Technologies. September 2014 - June 2015",
+			"3": "During my stint at Arizona State University I joined the Microgravity team. We proposed an experiment to NASA where we would study dust coagulation in microgravity to help explain how galaxies are formed. We were one of only a few teams to get selected and be able to conduct our experiment on NASA's microgravity plane. October 2013 - Spring 2014"
+		}
 	},
-	"Tools": {
+	"Tools I Use": {
 		"Atlassian": {
-			"Jira": "https://phinconnect.org/jira",
-			"Bamboo": "https://phinconnect.org/bamboo",
-			"FishEye": "https://phinconnect.org/fisheye",
-			"Bitbucket": "https://phinconnect.org/bitbucket",
-			"Confluence": "https://phinconnect.org/confluence"
+			"Jira": "I have been using Jira for a while now and it is a great tool. Since Atlassian has an entire suite of tools that easily integrate with one another, this tool has helped me throughout the development cycle to help track my issues. When I commit my code through Bitbucket, I can reference the issue I am working on and it will show up whenever I am looking at my issue.",
+			"Bitbucket": "I started off using GitHub which was great since it is just Git. However When I switched to Bitbucket, I haven't looked back. The ability to add reviewers to your pull requests and several other features make it more Admin friendly which really helps out when there are new people on the team.",
+			"Bamboo": "My deployment tool of choice is Bamboo. This allows for many ways of deploying code including NodeJS and even Bash with SSh and SCP protocols and more. This ies in well with Bitbucket, allowing webhooks to be generated and code builds to happen after certain commits or pull requests."
 		},
-		"Monitors": {
-			"Graylog Auditing (PROD)": "https://pplhie01.childrens.sea.kids",
-			"Graylog Auditing (Test/Cert)": "https://ptlhie02.childrens.sea.kids",
-			"e-Health Applications Grid Report": "http://ptlhie02.childrens.sea.kids/ganglia",
-			"24x7 Monitor": "https://www.site24x7.com/app/client#/home/monitors"
-		},
-		"Shared Spaces": {
-			"IS PMO SCPV Sharepoint": "http://sps/IS/EPA/PMO/Projects/SCPV/Pages/Home.aspx",
-			"Enterprise Health App Team Sharepoint": "http://sps/IS/EPA/TS/EHA/Pages/Home.aspx"
-		},
-		"Intersystems": {
-			"Intersystems Doc Books": "http://ptlhie01.childrens.sea.kids:57775/csp/docbook/DocBook.UI.HomePageZen.cls",
-			"Intersystem Sample UI Controls": "http://ptlhie01.childrens.sea.kids:57775/csp/samples/ZENDemo.Home.cls",
-			"Intersystem Web Dev Doc Books": "http://ptlhie01.childrens.sea.kids:57775/csp/docbook/DocBook.UI.Page.cls?KEY=SETWebDev"
+		"Jetbrains": {
+			"WebStorm": "I was developing a lot of JavaScript code including JSX syntax on Notepad++ and I just about had it. After searching around for JavaScript IDE's, I finally came across WebStorm and it has solved all issues I had previously. It integrates seamlessly with Git (or even SVN and Mercurial)and project management is a breeze.",
+			"CLion": "I have never been a fan of Visual Studio. It seems very clunky, slow, and I can never get it right. After my success with WebStorm I again looked toward Jetbrains for my IDE platform and found CLion. Since it is identical to WebStorm, I found it very easy to use."
 		}
 	},
-	"Netscaler": {
-		"Production Netscaler": "https://dmzppxvlb01.seattlechildrens.dmz",
-		"Test Netscaler": "https://dmzptxvlb01.seattlechildrens.dmz",
-		"DR Netscaler": "https://dmzbpxvlb01.seattlechildrens.dmz"
+	"Resume": {
 	},
-	"Servers": {
-		"Development": {
-			"PHINDEV": {
-				"Management Portal (Bus, Edge, Registry, SQL)": "http://pdlhie01.childrens.sea.kids:57773/csp/sys/UtilHome.csp",
-				"Management Portal (Access)": "http://pdlhie01.childrens.sea.kids:57774/csp/sys/UtilHome.csp",
-				"Clinician Portal": "http://pdlhie01.childrens.sea.kids:57774/csp/healthshare/phinaccess/SCH.UI.ClinicianPortal.cls",
-				"Le Portail du Clinicien": "http://pdlhie01.childrens.sea.kids:57774/csp/healthshare/phinaccess/SCH.UI.PHINPortal.cls",
-				"TrackCare": "http://pdlhie01.childrens.sea.kids:57774/csp/healthshare/phinaccess/web/default.htm"
-			},
-			"PHINDEV OLD": {
-				"Management Portal (Access, Bus, Edge, Registry, SQL)": "http://ptlhie01.childrens.sea.kids:57772/csp/sys/UtilHome.csp",
-				"Clinician Portal": "http://ptlhie01.childrens.sea.kids:57772/csp/healthshare/hsaccess/SCH.UI.ClinicianPortal.cls",
-				"Le Portail du Clinicien": "http://ptlhie01.childrens.sea.kids:57772/csp/healthshare/hsaccess/SCH.UI.PHINPortal.cls",
-				"TrackCare": "http://ptlhie01.childrens.sea.kids:57772/csp/healthshare/hsaccess/web/default.htm"
-			},
-			"SCHIEDEV": {
-				"Management Portal (Access, Bus, Edge, Registry, SQL)": "http://pdlhie01.childrens.sea.kids:57772/csp/sys/UtilHome.csp",
-				"Okta Preview": "https://seattlechildrens.oktapreview.com",
-				"Clinician Portal": "http://pdlhie01.childrens.sea.kids:57772/csp/healthshare/hsaccess/HS.UI.ClinicianPortal.cls",
-				"TrackCare": "http://pdlhie01.childrens.sea.kids:57772/csp/healthshare/HSACCESS/web/default.htm"
-			}
-		},
-		"Testing": {
-			"PHINTEST": {
-				"Management Portal (Edge, Bus, HSPI, Registry, SQL)": "http://ptlhie01.childrens.sea.kids:57776/csp/sys/UtilHome.csp",
-				"Management Portal (Access)": "http://ptlhie01.childrens.sea.kids:57777/csp/sys/UtilHome.csp",
-				"HSPI": "http://ptlhie01.childrens.sea.kids:57776/csp/healthshare/HSPIDATA/HS.UI.Home.cls",
-				"Clinician Portal": "http://ptlhie01.childrens.sea.kids:57777/csp/healthshare/hsaccess.HS.UI.ClinicianPortal.cls",
-				"TrackCare": "http://ptlhie01.childrens.sea.kids:57777/csp/healthshare/HSACCESS/web/default.htm"
-			},
-			"PHINCERT": {
-				"Management Portal (Edge, Bus, HSPI, Registry, SQL)": "http://ptlhie02.childrens.sea.kids:57771/csp/sys/UtilHome.csp",
-				"Management Portal (Access)": "http://ptlhie02.childrens.sea.kids:57776/csp/sys/UtilHome.csp",
-				"HSPI": "http://ptlhie02.childrens.sea.kids:57771/csp/healthshare/HSPIDATA/HS.UI.Home.cls",
-				"Clinician Portal": "http://ptlhie02.childrens.sea.kids:57776/csp/healthshare/hsaccess.HS.UI.ClinicianPortal.cls",
-				"TrackCare": "http://ptlhie02.childrens.sea.kids:57776/csp/healthshare/HSACCESS/web/default.htm"
-			},
-			"SCHIETEST": {
-				"Management Portal (Edge, Bus, HSPI, Registry, SQL)": "http://ptlhie01.childrens.sea.kids:57780/csp/sys/UtilHome.csp",
-				"Management Portal (Access)": "http://ptlhie01.childrens.sea.kids:57779/csp/sys/UtilHome.csp",
-				"HSPI": "http://ptlhie01.childrens.sea.kids:57780/csp/healthshare/HSPIDATA/HS.UI.Home.cls",
-				"Clinician Portal": "http://ptlhie01.childrens.sea.kids:57779/csp/healthshare/hsaccess.HS.UI.ClinicianPortal.cls",
-				"TrackCare": "http://ptlhie01.childrens.sea.kids:57779/csp/healthshare/HSACCESS/web/default.htm"
-			},
-			"SCHIECERT": {
-				"Management Portal (Bus, Edge, HSPI, Registry, SQL)": "http://ptlhie02.childrens.sea.kids:57780/csp/sys/UtilHome.csp",
-				"Management Portal (Access)": "http://ptlhie02.childrens.sea.kids:57779/csp/sys/UtilHome.csp",
-				"HSPI": "http://ptlhie02.childrens.sea.kids:57780/csp/healthshare/HSPIDATA/HS.UI.Home.cls",
-				"Okta Preview": "https://seattlechildrens.oktapreview.com",
-				"Clinician Portal": "http://ptlhie02.childrens.sea.kids:57779/csp/healthshare/hsaccess/HS.UI.ClinicianPortal.cls",
-				"TrackCare": "http://ptlhie02.childrens.sea.kids:57779/csp/healthshare/HSACCESS/web/default.htm"
-			},
-			"SOLUTION": {
-				"Management Portal (Access, Bus, HSPI, Edge, Registry, SQL)": "http://ptlhie01.childrens.sea.kids:57773/csp/sys/UtilHome.csp",
-				"IHETEST TOOL": "http://ptlhie01.childrens.sea.kids:57773/csp/healthshare/hsregistry/HS.Test.UI.Main.cls",
-				"Clinician Portal": "http://ptlhie01.childrens.sea.kids:57773/csp/healthshare/hsaccess/HS.UI.ClinicianPortal.cls",
-				"TrackCare": "http://ptlhie01.childrens.sea.kids:57773/csp/healthshare/HSACCESS/web/default.htm"
-			},
-			"TUNING": {
-				"Management Portal (Access, Bus, HSPI, Edge, Registry, SQL)": "http://ptlhie01.childrens.sea.kids:57774/csp/sys/UtilHome.csp",
-				"HSPI": "http://ptlhie01.childrens.sea.kids:57774/csp/healthshare/HSPIDATA/HS.UI.Home.cls",
-				"Clinician Portal": "http://ptlhie01.childrens.sea.kids:57774/csp/healthshare/hsaccess/HS.UI.ClinicianPortal.cls",
-				"TrackCare": "http://ptlhie01.childrens.sea.kids:57774/csp/healthshare/HSACCESS/web/default.htm"
-			},
-			"TUNINGHSPI": {
-				"Management Portal (Access, Bus, HSPI, Edge, Registry, SQL)": "http://ptlhie01.childrens.sea.kids:57775/csp/sys/UtilHome.csp",
-				"HSPI": "http://ptlhie01.childrens.sea.kids:57775/csp/healthshare/HSPIDATA/HS.UI.Home.cls",
-				"Clinician Portal": "http://ptlhie01.childrens.sea.kids:57775/csp/healthshare/hsaccess/HS.UI.ClinicianPortal.cls",
-				"TrackCare": "http://ptlhie01.childrens.sea.kids:57775/csp/healthshare/HSACCESS/web/default.htm"
-			}
-		},
-		"Production": {
-			"SCHIEPROD": {
-				"Management Portal (Registry)": "http://pplhie07.childrens.sea.kids:57772/csp/sys/UtilHome.csp",
-				"Management Portal (HSPI)": "http://pplhie03.childrens.sea.kids:57772/csp/sys/UtilHome.csp",
-				"Management Portal (Edge)": "http://pplhie05.childrens.sea.kids:57772/csp/sys/UtilHome.csp",
-				"Management Portal (Repository)": "http://pplhie11.childrens.sea.kids:57772/csp/sys/UtilHome.csp",
-				"Management Portal (Consumer)": "http://pplhie06.childrens.sea.kids:57772/csp/sys/UtilHome.csp",
-				"Management Portal (SCHSQL)": "http://pplhie06.childrens.sea.kids:57772/csp/sys/UtilHome.csp",
-				"Management Portal (SCPVACCESS - 09)": "http://pplhie09.childrens.sea.kids:57772/csp/sys/UtilHome.csp",
-				"Management Portal (SCPVACCESS - 10)": "http://pplhie10.childrens.sea.kids:57772/csp/sys/UtilHome.csp",
-				"HSPI": "http://pplhie03.childrens.sea.kids:57772/csp/healthshare/HSPIDATA/HS.UI.Home.cls",
-				"TrackCare (SCPVACCESS - 09)": "http://pplhie09.childrens.sea.kids:57772/csp/healthshare/scpvaccess/web/default.htm",
-				"TrackCare (SCPVACCESS - 10)": "http://pplhie10.childrens.sea.kids:57772/csp/healthshare/scpvaccess/web/default.htm",
-				"Okta Prod": "https://seattlechildrens.okta.com"
-			}
-		}
-	},
-	"IHE Endpoints": {
-		"PROD IHE ENDPOINTS": {
-			"PIXv3 Manager": "https://sync.phinconnect.org/csp/exchange/HS.IHE.PIXv3.Manager.Services.cls",
-			"PDQv3 Manager": "https://sync.phinconnect.org/csp/exchange/HS.IHE.PDQv3.Supplier.Services.cls",
-			"XDS.b Registry": "https://sync.phinconnect.org/csp/exchange/HS.IHE.XDSb.Registry.Services.cls",
-			"XDS.b Repository": "https://sync.phinconnect.org/csp/exchange/HS.IHE.XDSb.Repository.Services.cls",
-			"On-Demand XDS.b Repository": "https://sync.phinconnect.org/csp/ondemand/HS.IHE.XDSb.Repository.Services.cls",
-			"Responding XCPD": "https://sync.phinconnect.org/csp/exchange/HS.IHE.XCPD.RespondingGateway.Services.cls",
-			"Responding XCA": "https://sync.phinconnect.org/csp/exchange/HS.IHE.XCA.RespondingGateway.Services.cls",
-			"Initiating XCA": "https://sync.phinconnect.org/csp/exchange/HS.IHE.XCA.InitiatingGateway.Services.cls"
-		},
-		"Cert IHE ENDPOINTS": {
-			"PIXv3 Manager": "https://ptlhie01.childrens.sea.kids/csp/exchange/HS.IHE.PIXv3.Manager.Services.cls",
-			"PDQv3 Manager": "https://ptlhie01.childrens.sea.kids/csp/exchange/HS.IHE.PDQv3.Supplier.Services.cls",
-			"XDS.b Registry": "https://ptlhie01.childrens.sea.kids/csp/exchange/HS.IHE.XDSb.Registry.Services.cls",
-			"XDS.b Repository": "https://ptlhie01.childrens.sea.kids/csp/exchange/HS.IHE.XDSb.Repository.Services.cls",
-			"On-Demand XDS.b Repository": "https://ptlhie01.childrens.sea.kids/csp/ondemand/HS.IHE.XDSb.Repository.Services.cls",
-			"Responding XCPD": "https://ptlhie01.childrens.sea.kids/csp/exchange/HS.IHE.XCPD.RespondingGateway.Services.cls",
-			"Responding XCA": "https://ptlhie01.childrens.sea.kids/csp/exchange/HS.IHE.XCA.RespondingGateway.Services.cls",
-			"Initiating XCA": "https://ptlhie01.childrens.sea.kids/csp/exchange/HS.IHE.XCA.InitiatingGateway.Services.cls"
-		},
-		"TEST IHE ENDPOINTS": {
-			"PIXv3 Manager": "https://ptlhie02.childrens.sea.kids/csp/exchange/HS.IHE.PIXv3.Manager.Services.cls",
-			"PDQv3 Manager": "https://ptlhie02.childrens.sea.kids/csp/exchange/HS.IHE.PDQv3.Supplier.Services.cls",
-			"XDS.b Registry": "https://ptlhie02.childrens.sea.kids/csp/exchange/HS.IHE.XDSb.Registry.Services.cls",
-			"XDS.b Repository": "https://ptlhie02.childrens.sea.kids/csp/exchange/HS.IHE.XDSb.Repository.Services.cls",
-			"On-Demand XDS.b Repository": "https://ptlhie02.childrens.sea.kids/csp/ondemand/HS.IHE.XDSb.Repository.Services.cls",
-			"Responding XCPD": "https://ptlhie02.childrens.sea.kids/csp/exchange/HS.IHE.XCPD.RespondingGateway.Services.cls",
-			"Responding XCA": "https://ptlhie02.childrens.sea.kids/csp/exchange/HS.IHE.XCA.RespondingGateway.Services.cls",
-			"Initiating XCA": "https://ptlhie02.childrens.sea.kids/csp/exchange/HS.IHE.XCA.InitiatingGateway.Services.cls"
-		}
-	},
-	"Downloads": {
-		"Old PHINDEV Clone": "https://phinconnect.org/temp/oldphindevclone.zip",
-		"Intersystems Software": "http://www.intersystems.com/library/software-downloads/",
-		"Eclipse": "https://eclipse.org/downloads/"
+	"Contact Me": {
+		"Email": "Paul.R.Reesman@gmail.com"
 	}
 }

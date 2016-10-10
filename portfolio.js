@@ -2,8 +2,6 @@ var React     = require("react");
 var ReactDOM  = require("react-dom");
 var Boot      = require("react-bootstrap");
 var data      = require("./data.json");
-//var percent   = require("/tmp/accumulatedUsage.json");
-var jQuery    = require("jquery");
 
 /// Populates the data rendered when Navigation bar is clicked --- for text
 var GetData_Text = React.createClass({
@@ -363,20 +361,16 @@ var GetData_Servers = React.createClass({
 var GetData_Controller = React.createClass({
   render: function () {
     switch (this.props.selectedKey) {
-      case "SCH OID's":
+      case "Bio":
         return(<GetData_Text selectedKey={this.props.selectedKey} />)
-      case "IHE Reference Documentation":
+      case "Portfolio":
         return(<GetData_Hyperlink selectedKey={this.props.selectedKey} />)
-      case "Tools":
+      case "Tools I Use":
         return(<GetData_Hyperlink_Multiple selectedKey={this.props.selectedKey} />)
-      case "Netscaler":
+      case "Resume":
         return(<GetData_Hyperlink selectedKey={this.props.selectedKey} />)
-      case "Servers":
+      case "Contact Me":
         return(<GetData_Servers selectedKey={this.props.selectedKey} />)
-      case "IHE Endpoints":
-        return(<GetData_Hyperlink_Multiple selectedKey={this.props.selectedKey} />)
-      case "Downloads":
-        return(<GetData_Hyperlink selectedKey={this.props.selectedKey} />)
       default:
         return(null)
     }

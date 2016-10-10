@@ -21,7 +21,7 @@
   "scripts": {
     "build": "webpack --progress"
   },
-  "author": "Paul Reesman <Paul.Reesman@seattlechildrens.org>",
+  "author": "Paul Reesman <Paul.R.Reesman@gmail.com>",
   "license": "ISC",
   "babel": {
     "presets": [

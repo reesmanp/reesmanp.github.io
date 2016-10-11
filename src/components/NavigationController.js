@@ -1,5 +1,7 @@
-import{ Navbar NavItem Nav } from 'react-bootstrap'
-var GetData_Controller = require('./DataController')
+import{ Navbar, NavItem, Nav } from 'react-bootstrap';
+const React = require('react');
+const data = require('../../data.json');
+var GetData_Controller = require('./DataController');
 
 /// Navigation Bar
 module.exports = React.createClass({

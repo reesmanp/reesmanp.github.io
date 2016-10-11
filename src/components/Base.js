@@ -1,5 +1,6 @@
-import { Image } from 'react-bootstrap'
-var Navigation = require('./NavigationController')
+import { Image, PageHeader } from 'react-bootstrap';
+const React = require('react');
+var Navigation = require('./NavigationController');
 
 /// Profile Picture
 const profPic = (
@@ -8,7 +9,7 @@ const profPic = (
         display:"block",
         margin:"auto"
     }} >
-        <Image src="../images/new_prof_pic.jpg" responsive rounded />
+        <Image src="./images/new_prof_pic.jpg" responsive rounded />
     </a>
 );
 
@@ -25,6 +26,8 @@ module.exports = React.createClass({
                 height:"100%",
                 minHeight:window.innerHeight + 'px'
             }} >
+                <br />
+                <PageHeader>Paul R. Reesman</PageHeader>
                 <br />
                 {profPic}
                 <br />

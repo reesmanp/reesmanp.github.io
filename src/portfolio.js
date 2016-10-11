@@ -18,10 +18,8 @@
 
         window.removeEventListener("load", load, false)
 
-        FastClick.attach(document.body)
-
         ReactDOM.render(
-            <Base/>,
+            <Base />,
             document.getElementById("reactContainer")
         )
 

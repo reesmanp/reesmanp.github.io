@@ -1,4 +1,5 @@
-import { Text Hyperlink } from '../data/DataExport'
+import { Text, Hyperlink } from '../data/DataExport';
+const React = require('react');
 
 /// Controller to pass the navigated data to the correct component in order to render it properly
 module.exports = React.createClass({

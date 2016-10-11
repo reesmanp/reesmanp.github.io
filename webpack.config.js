@@ -1,6 +1,6 @@
 module.exports = {
   entry: {
-    portfolio: "./portfolio.js",
+    portfolio: "./src/portfolio.js",
   },
   output: {
     path: "./dist/",

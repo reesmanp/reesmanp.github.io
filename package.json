@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "Professional Portfolio",
-  "main": "portfolio.js",
+  "main": "src/portfolio.js",
   "dependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.10.4",

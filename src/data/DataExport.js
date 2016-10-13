@@ -1,2 +1,2 @@
-export * from './HyperlinkData'
-export * from './TextData'
+//export * from './HyperlinkData'
+export GetData_Text from './TextData'

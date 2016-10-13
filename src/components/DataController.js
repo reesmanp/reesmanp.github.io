@@ -1,4 +1,5 @@
-import { Text, Hyperlink } from '../data/DataExport';
+//import { GetData_Text } from '../data/DataExport';
+import GetData_Text from '../data/TextData';
 const React = require('react');
 
 /// Controller to pass the navigated data to the correct component in order to render it properly
@@ -16,7 +17,7 @@ module.exports = React.createClass({
             case "Contact Me":
                 return(<GetData_Servers selectedKey={this.props.selectedKey} />);
             default:
-                return(null)
+                return(<div/>)
         }
     }
 });

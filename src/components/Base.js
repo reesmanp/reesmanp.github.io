@@ -18,7 +18,7 @@ module.exports = React.createClass({
     render: function () {
         return(
             <div style={{
-                background:"#1181AA",
+                background:"#888888",
                 margin:"0px 0px 0px 0px",
                 padding:"0px 0px 0px 0px",
                 font:"normal 90% arial,helvetica,sans-serif",
@@ -27,10 +27,9 @@ module.exports = React.createClass({
                 minHeight:window.innerHeight + 'px'
             }} >
                 <br />
-                <PageHeader>Paul R. Reesman</PageHeader>
-                <br />
-                {profPic}
-                <br />
+                <div className="page-header" style={{backgroundColor:"#C0C0C0", margin:"0px 0 0px" }}>
+                    <h1 style={{ marginTop:"0" }}>Paul R. Reesman</h1>
+                </div>
                 <Navigation />
                 <br />
             </div>

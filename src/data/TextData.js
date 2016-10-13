@@ -1,8 +1,9 @@
-import { Table } from 'react-bootstrap';
+import { Panel } from 'react-bootstrap';
 const React = require('react');
+const data = require('../../data.json');
 
 /// Populates the data rendered when Navigation bar is clicked --- for text
-module.exports = React.createClass({
+var GetData_Text = React.createClass({
     getInitialState: function () {
         return {
             mouseHover:-1
@@ -24,36 +25,15 @@ module.exports = React.createClass({
     render: function() {
         if (!data.hasOwnProperty(this.props.selectedKey)) {return null}
         return(
-            <Table bordered condensed align="center">
-                <thead>
-                <tr>
-                    <th style={{
-                        backgroundColor:"#F26E26"
-                    }}>
-                        OID Name
-                    </th>
-                    <th style={{
-                        backgroundColor:"#F26E26"
-                    }}>
-                        OID
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                {Object.keys(data[this.props.selectedKey]).map( (key,idx) =>
-                    <tr eventKey={idx} onMouseOver={this.MouseOver.bind(null, idx)} onMouseOut={this.MouseOut} style={{backgroundColor:idx === this.state.mouseHover ? "#F26E26" : ""}}>
-                        <td textAlign="center" width="50%" style={{paddingBottom:"10px"}}>
-                            <b>{key}</b>
-                        </td>
-                        <td textAlign="center" width="50%" style={{paddingBottom:"10px"}}>
-                            <b><font color="black">
-                                {data[this.props.selectedKey][key]}
-                            </font></b>
-                        </td>
-                    </tr>
+            <div>
+                {Object.keys(data[this.props.selectedKey]).map((key,idx) =>
+                    <Panel header={key} bsStyle="primary">
+                        {data[this.props.selectedKey][key]}
+                    </Panel>
                 )}
-                </tbody>
-            </Table>
+            </div>
         );
     }
 });
+
+module.exports = GetData_Text;

@@ -33,7 +33,9 @@ module.exports = React.createClass({
     render: function() {
         return(
             <div>
-                <Navbar>
+                <Navbar fluid style={{
+                    backgroundColor:"#C0C0C0"
+                }}>
                     <Nav bsStyle="pills" activeKey={this.state.selectedKey} onSelect={this.OnSelect} style={{
                         width:"100%",
                         textAlign:"center"
@@ -41,10 +43,11 @@ module.exports = React.createClass({
                         {Object.keys(data).map( (key,idx) =>
                             <NavItem eventKey={key} onMouseOver={this.MouseOver} onMouseOut={this.MouseOut} style={{
                                 float:"none",
+                                fontWeight:"bold",
                                 display:"inline-block",
-                                backgroundColor:key === this.state.mouseHover ? "#F26E26" : ""
+                                backgroundColor:key === this.state.mouseHover ? "#FFCC00" : ""
                             }}>
-                                {key}
+                                <div style={{ color:"black" }}>{key}</div>
                             </NavItem>
                         )}
                     </Nav>

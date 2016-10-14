@@ -1,5 +1,4 @@
-import GetData_Text from '../data/DataExport';
-//import GetData_Text from '../data/TextData';
+import GetData_Text from '../data/TextData';
 const React = require('react');
 
 /// Controller to pass the navigated data to the correct component in order to render it properly

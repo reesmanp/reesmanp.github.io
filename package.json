@@ -13,8 +13,9 @@
     "json-loader": "^0.5.4",
     "react": "^15.3.2",
     "react-bootstrap": "^0.30.3",
-    "react-dom": "^15.2.1",
+    "react-dom": "^15.3.2",
     "react-materialize": "^0.17.0",
+    "react-pdf": "0.0.10",
     "webpack": "^1.13.1",
     "webpack-init": "^0.1.0"
   },

@@ -9,9 +9,8 @@ module.exports = React.createClass({
             case "Bio":
                 return(<GetData_Text selectedKey={this.props.selectedKey} selectedObj={this.props.selectedObj}/>);
             case "Portfolio":
-                return(<GetData_NestedText selectedKey={this.props.selectedKey} selectedObj={this.props.selectedObj}/>);
             case "Tools I Use":
-                return(<GetData_Hyperlink_Multiple selectedKey={this.props.selectedKey} selectedObj={this.props.selectedObj}/>);
+                return(<GetData_NestedText selectedKey={this.props.selectedKey} selectedObj={this.props.selectedObj}/>);
             case "Resume":
                 return(<GetData_Hyperlink selectedKey={this.props.selectedKey} selectedObj={this.props.selectedObj}/>);
             case "Contact Me":

@@ -1,4 +1,5 @@
-import { Panel } from 'react-bootstrap';
+//import { Panel } from 'react-bootstrap';
+import { CardPanel } from 'react-materialize';
 const React = require('react');
 const data = require('../../data.json');
 
@@ -27,9 +28,9 @@ var GetData_Text = React.createClass({
         return(
             <div>
                 {Object.keys(data[this.props.selectedKey]).map((key,idx) =>
-                    <Panel header={key} bsStyle="primary">
+                    <CardPanel header={key}>
                         {data[this.props.selectedKey][key]}
-                    </Panel>
+                    </CardPanel>
                 )}
             </div>
         );

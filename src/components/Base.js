@@ -1,7 +1,9 @@
-import { Image, PageHeader } from 'react-bootstrap';
+//import { Image, PageHeader } from 'react-bootstrap';
+import { Card, CardTitle } from 'react-materialize';
 const React = require('react');
 var Navigation = require('./NavigationController');
 
+/*
 /// Profile Picture
 const profPic = (
     <a href="https://github.com/reesmanp" target="_blank" style={{
@@ -32,6 +34,20 @@ module.exports = React.createClass({
                 </div>
                 <Navigation />
                 <br />
+            </div>
+        );
+    }
+});
+*/
+
+module.exports = React.createClass({
+    render: function () {
+        return(
+            <div className="container">
+                <Card className='small'
+                    header={<CardTitle image="./images/space.jpeg">Paul R. Reesman</CardTitle>}>
+                    <Navigation/>
+                </Card>
             </div>
         );
     }

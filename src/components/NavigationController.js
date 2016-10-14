@@ -1,4 +1,5 @@
-import{ Navbar, NavItem, Nav } from 'react-bootstrap';
+//import{ Navbar, NavItem, Nav } from 'react-bootstrap';
+import { Navbar, NavItem } from 'react-materialize';
 const React = require('react');
 const data = require('../../data.json');
 var GetData_Controller = require('./DataController');
@@ -30,6 +31,22 @@ module.exports = React.createClass({
         });
     },
 
+    render: function () {
+        return(
+            <div>
+                <Navbar className="blue-grey darken-2">
+                    {Object.keys(data).map( (key,idx) =>
+                        <NavItem href=''>
+                            {key}
+                        </NavItem>
+                    )}
+                </Navbar>
+                <GetData_Controller selectedKey={this.state.selectedKey}/>
+            </div>
+        );
+    }
+
+    /*
     render: function() {
         return(
             <div>
@@ -56,4 +73,5 @@ module.exports = React.createClass({
             </div>
         );
     }
+    */
 });

@@ -6,13 +6,15 @@ var GetData_Controller = require('./DataController');
 module.exports = React.createClass({
     getInitialState: function () {
         return {
-            selectedKey:0
+            selectedKey:0,
+            selectedObj:{}
         }
     },
 
-    OnSelect: function(key) {
+    OnSelect: function(key,obj) {
         this.setState({
-            selectedKey:key
+            selectedKey:key,
+            selectedObj:obj
         });
     },
 
@@ -23,7 +25,7 @@ module.exports = React.createClass({
                     header={<CardTitle image="./images/space.jpeg">Paul R. Reesman</CardTitle>}>
                     <Navigation click={this.OnSelect} selectedKey={this.state.selectedKey}/>
                 </Card>
-                <GetData_Controller selectedKey={this.state.selectedKey}/>
+                <GetData_Controller selectedKey={this.state.selectedKey} selectedObj={this.state.selectedObj}/>
             </div>
         );
     }

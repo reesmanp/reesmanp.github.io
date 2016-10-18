@@ -41,7 +41,7 @@ var GetData_PDF = React.createClass({
                     <PDF file="./images/Reesman_Resume_Graduate.pdf" page={this.state.currentPage} onDocumentComplete={this._onDocumentComplete}/>
                 </div>
                 <div className="center-btn">
-                    <a href="./images/Reesman_Graduate_Resume.pdf" download>
+                    <a href="./images/Reesman_Resume_Graduate.pdf" download="Reesman_Resume">
                         <Button waves="light">Download</Button>
                     </a>
                 </div>

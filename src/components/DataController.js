@@ -8,10 +8,12 @@ const React = require('react');
 module.exports = React.createClass({
     render: function () {
         switch (this.props.selectedKey) {
+            case "Welcome":
             case "Bio":
                 return(<GetData_Text selectedKey={this.props.selectedKey} selectedObj={this.props.selectedObj}/>);
             case "Portfolio":
             case "Tools I Use":
+            case "Blog":
                 return(<GetData_NestedText selectedKey={this.props.selectedKey} selectedObj={this.props.selectedObj}/>);
             case "Resume":
                 return(<GetData_PDF/>);

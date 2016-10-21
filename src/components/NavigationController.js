@@ -4,6 +4,12 @@ const data = require('../../data.json');
 
 /// Navigation Bar
 module.exports = React.createClass({
+    statics : {
+        GetObj: function (obj) {
+            return data[obj]
+        }
+    },
+
     render: function () {
         return(
             <div>

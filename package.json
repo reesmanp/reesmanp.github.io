@@ -15,12 +15,12 @@
     "react-dom": "^15.3.2",
     "react-materialize": "^0.17.0",
     "react-pdf": "0.0.10",
-    "webpack": "^1.13.1",
+    "webpack": "^1.13.3",
     "webpack-init": "^0.1.0"
   },
   "devDependencies": {},
   "scripts": {
-    "build": "webpack --progress"
+    "build": "webpack -p --progress"
   },
   "author": "Paul Reesman <Paul.R.Reesman@gmail.com>",
   "license": "ISC",

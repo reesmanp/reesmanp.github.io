@@ -1,3 +1,5 @@
+var Webpack = require("webpack");
+
 module.exports = {
   entry: {
     portfolio: "./src/portfolio.js",
@@ -7,6 +9,22 @@ module.exports = {
     filename: "[name].min.js",
     publicPath: "/"
   },
+  plugins: [
+    new Webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      output: {
+        comments: false,
+        "max_line_len": 500
+      }
+    }),
+    new Webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
+      }
+    })
+  ],
   module: {
     loaders: [
       {
@@ -32,4 +50,4 @@ module.exports = {
       }
     ],
   },
-}
+};

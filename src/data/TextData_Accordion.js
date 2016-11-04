@@ -8,7 +8,7 @@ var GetData_Accordion = React.createClass({
     return(
       <Collapsible accordion popout defaultActiveKey={-1}>
         {Object.keys(this.props.selectedObj).map( (key,idx) =>
-          <CollapsibleItem header={key} eventKey={idx}>
+          <CollapsibleItem header={key} key={idx} eventKey={idx}>
             <GetData_Text selectedKey={key} selectedObj={this.props.selectedObj[key]}/>
           </CollapsibleItem>
         )}

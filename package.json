@@ -15,6 +15,7 @@
     "react-dom": "^15.3.2",
     "react-materialize": "^0.17.0",
     "react-pdf": "0.0.10",
+    "smoothscroll-polyfill": "^0.3.4",
     "webpack": "^1.13.3",
     "webpack-init": "^0.1.0"
   },

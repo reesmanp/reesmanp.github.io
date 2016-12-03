@@ -6,12 +6,16 @@ const React = require('react');
 var GetData_Accordion = React.createClass({
   render: function () {
     return(
-      <Collapsible accordion popout defaultActiveKey={-1}>
+      <Collapsible accordion
+                   popout
+                   defaultActiveKey={-1}>
         {Object.keys(this.props.selectedObj).map( (key,idx) =>
-          <CollapsibleItem header={key} key={idx} eventKey={idx}>
-            <Collapsible accordion popout defaultActiveKey={-1}>
+          <CollapsibleItem id={key} header={key} key={idx} eventKey={key} scroll="smooth">
+            <Collapsible accordion
+                         popout
+                         defaultActiveKey={-1}>
               {Object.keys(this.props.selectedObj[key]).map( (kkey,iidx) =>
-                <CollapsibleItem header={kkey} key={iidx} eventKey={iidx}>
+                <CollapsibleItem id={kkey} header={kkey} key={iidx} eventKey={kkey} scroll="smooth">
                   <GetData_Text selectedKey={kkey} selectedObj={this.props.selectedObj[key][kkey]}/>
                 </CollapsibleItem>
               )}

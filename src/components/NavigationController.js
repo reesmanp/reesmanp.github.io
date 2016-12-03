@@ -16,7 +16,7 @@ module.exports = React.createClass({
                 <Navbar className="blue-grey darken-2">
                     {Object.keys(data).map( (key,idx) =>
                         <NavItem className={this.props.selectedKey == key ? "active" : "not-active"}
-                                 key={key} href="#"
+                                 key={key} href={"#" + key}
                                  onClick={(evt) => this.props.click(key,data[key])}>
                             {key}
                         </NavItem>

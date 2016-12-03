@@ -5,7 +5,7 @@ var GetData_Controller = require('./DataController');
 
 module.exports = React.createClass({
     getInitialState: function () {
-        const startingKey = "Welcome";
+        const startingKey = window.location.hash ? window.location.hash.slice(1) : "Welcome";
         return {
             selectedKey: startingKey,
             selectedObj: Navigation_Controller.GetObj(startingKey)

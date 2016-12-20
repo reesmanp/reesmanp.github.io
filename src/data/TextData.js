@@ -5,12 +5,30 @@ import React, { Component } from 'react';
 class GetData_Text extends Component {
   render () {
     let lang = {
-      ReactJS: "https://facebook.github.io/react/img/logo.svg",
-      NodeJS: "https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png",
-      HapiJS: "https://raw.githubusercontent.com/hapijs/hapi/master/test/file/image.jpg",
-      Python: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png",
-      Haskell: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/2000px-Haskell-Logo.svg.png",
-      Java: "https://www.seeklogo.net/wp-content/uploads/2011/06/java-logo-vector.png",
+      ReactJS: [
+        "https://facebook.github.io/react/",
+        "https://facebook.github.io/react/img/logo.svg"
+      ],
+      NodeJS: [
+        "https://nodejs.org/",
+        "https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png"
+      ],
+      HapiJS: [
+        "https://hapijs.com/",
+        "https://raw.githubusercontent.com/hapijs/hapi/master/test/file/image.jpg"
+      ],
+      Python: [
+        "https://www.python.org/",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png"
+      ],
+      Haskell: [
+        "https://www.haskell.org/",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/2000px-Haskell-Logo.svg.png"
+      ],
+      Java: [
+        "https://www.java.com/",
+        "https://www.seeklogo.net/wp-content/uploads/2011/06/java-logo-vector.png"
+      ]
     };
 
     return(
@@ -23,7 +41,7 @@ class GetData_Text extends Component {
               <Col s={12}>
                 {Object.keys(lang).map((key, idx) =>
                   <Chip key={this.props.selectedKey + '_' + key}>
-                    <img src={lang[key]} />
+                    <a href={lang[key][0]} target="_blank"><img src={lang[key][1]} /></a>
                     {key}
                   </Chip>
                 )}

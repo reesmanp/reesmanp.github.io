@@ -1,5 +1,5 @@
 import { CardPanel, Row, Col, Chip } from 'react-materialize';
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
 /// Populates the data rendered when Navigation bar is clicked --- for text
 class GetData_Text extends Component {

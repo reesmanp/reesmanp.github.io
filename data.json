@@ -1,6 +1,7 @@
 {
 	"Welcome": {
-		"Välkommen": "Welcome to my online portfolio! Feel free to browse around my webpage and even send me an email if you have any questions. If you are a possible employer or someone who wants some work done, don't feel shy; please reach out and let me know what you are looking for. Safe travels, friend!"
+		"Välkommen": "Welcome to my online portfolio! Feel free to browse around my webpage and even send me an email if you have any questions. If you are a possible employer or someone who wants some work done, don't feel shy; please reach out and let me know what you are looking for. Safe travels, friend!",
+		"Open Source Projects I Have Contributed To": "<a href=\"https:\/\/github.com\/react-materialize\/react-materialize\" target=\"_blank\">React Materialize<\/a><br \/><a href=\"https:\/\/github.com\/PCGen\/pcgen\" target=\"_blank\">PCGen<\/a>"
 	},
 	"Bio": {
 		"Introduction": "My name is Paul Reesman and I have a long and colorful history filled with experience, creativity, curiosity, and leadership. Originally from Phoenix, Arizona I joined the army after high school and became a member of the elite unit known as 'Rangers' up in the state of Washington. Throughout my tenure I advanced to the rank of sergeant and deployed to Afghanistan on four separate occasions. Upon separating from the armed forces, I was left with the same thoughts of nearly any other veteran, 'What next?'",
@@ -44,6 +45,11 @@
 	},
 	"Blog": {
 		"2016": {
+			"DevOps": {
+				"What It Is": "DevOps (Development and Operations) is a Jack-Of-All-Trades kind of position. Your are expected to develop code for 'X' amount of time and do operations tasks for 'Y' amount of time. The time spent on either side depends on where you work and what is currently prioritized which can change frequently depending on the current Agile SCRUM push. I was moved from a developer position to DevOps during Spring of this year and I thought I would hate it but it turns out that I am loving it. I have been put in charge on a large portion of AWS services, upgrading applications and backing them up, finding out what systems are down and why, and making sure builds are building successfully (Also placing blame on developers if they fail). That is a lot on my plate which caused a lot of unneeded stress since I thought that would take up all of my time.",
+				"Why I Love It": "I quickly found out that I had a lot of extra time after my operations tasks were finished. I no longer had the time to build code from the ground up, which is okay with me (And my boss) since I found out that I deliver better quality code faster when I am doing bug fixes and enhancement requests. Heck, I have developed several RESTful API's during my time thus far as DevOps. One more thing is that is forces me to be Full Stack since I have to deal with backend things operationally and most bug fixes and enhancement requests we have are frontend related.",
+				"Date Posted": "12/20/2016"
+			},
 			"Open Source Software": {
 				"What?": "Open Source Software (OSS) is the driving force of the software industry when it comes to tools and niche items. There are two main benefits behind the OSS community, it is free and the labor is free. Granted you have to pay attention to the licenses each project may or may not have which may or may not restrict your usage of said project. But mostly it is free. Any one user can come along and use it, change it, and even add to it for you. This helps developers from re-inventing the wheel many times over. GitHub and Bitbucket are my two favorite site hosting OSS repositories.",
 				"How?": "This was my question for years on end. Even after I graduated from college, I had no real idea how how to contribute to OSS. There was a class that was offered but I didn't take it because I was already taking 18+ credits a term without it. I only recently found out how to do it and even found a couple repositories that I have contributed to, here is my guide.",

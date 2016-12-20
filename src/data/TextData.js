@@ -6,7 +6,7 @@ class GetData_Text extends Component {
   render () {
     let lang = {
       ReactJS: "https://facebook.github.io/react/img/logo.svg",
-      NodeJS: "http://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png",
+      NodeJS: "https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png",
       HapiJS: "https://raw.githubusercontent.com/hapijs/hapi/master/test/file/image.jpg",
       Python: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png",
       Haskell: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haskell-Logo.svg/2000px-Haskell-Logo.svg.png",
@@ -22,7 +22,7 @@ class GetData_Text extends Component {
             <Row>
               <Col s={12}>
                 {Object.keys(lang).map((key, idx) =>
-                  <Chip>
+                  <Chip key={this.props.selectedKey + '_' + key}>
                     <img src={lang[key]} />
                     {key}
                   </Chip>

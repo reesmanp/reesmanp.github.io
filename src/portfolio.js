@@ -1,29 +1,29 @@
 "use strict";
+
+import browser from "./utilities/DetectBrowser";
+import React from "react";
+import ReactDOM from "react-dom";
+import Base from "./components/Base";
+
 (() => {
 
-    var browser = require(__dirname + "/utilities/DetectBrowser");
+  if (browser.name === "MSIE" && browser.version < 9) {
+    document.write("You are using a deprecated browser. Please upgrade your current browser.");
+    return
+  }
 
-    if (browser.name === "MSIE" && browser.version < 9) {
-        document.write("You are using a deprecated browser. Please upgrade your current browser.");
-        return
-    }
+  require("smoothscroll-polyfill");
 
-    var React = require("react");
-    var ReactDOM = require("react-dom");
-    var Base = require(__dirname + "/components/Base");
-    require("smoothscroll-polyfill");
+  window.addEventListener("load", function load(event) {
 
-    window.addEventListener("load", function load(event) {
+    window.alert = () => {};
 
-        window.alert = () => {};
+    window.removeEventListener("load", load, false);
 
-        window.removeEventListener("load", load, false);
+    ReactDOM.render(
+      <Base />,
+      document.getElementById("reactContainer")
+    )
+  })
 
-        ReactDOM.render(
-            <Base />,
-            document.getElementById("reactContainer")
-        )
-
-    })
-
-})()
+})();

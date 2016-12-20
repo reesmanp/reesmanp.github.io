@@ -1,33 +1,35 @@
-import { Card, CardTitle } from 'react-materialize';
-const React = require('react');
-var Navigation_Controller = require('./NavigationController');
-var GetData_Controller = require('./DataController');
+import React, { Component } from 'react';
+import Navigation_Controller from './NavigationController';
+import GetData_Controller from './DataController';
 
-module.exports = React.createClass({
-    getInitialState: function () {
-        const startingKey = window.location.hash ? window.location.hash.slice(1) : "Welcome";
-        return {
-            selectedKey: startingKey,
-            selectedObj: Navigation_Controller.GetObj(startingKey)
-        }
-    },
+class Base extends Component {
+  constructor (props) {
+    super(props);
 
-    OnSelect: function(key,obj) {
-        this.setState({
-            selectedKey:key,
-            selectedObj:obj
-        });
-    },
+    const startingKey = window.location.hash ? window.location.hash.slice(1).replace(/^tab_\d?$/, "Blog") : "Welcome";
+    this.state = {
+      selectedKey: startingKey,
+      selectedObj: Navigation_Controller.GetObj(startingKey)
+    };
 
-    render: function () {
-        return(
-            <div className="container">
-                <Card className='small'
-                    header={<CardTitle image="./images/space.jpeg">Paul R. Reesman</CardTitle>}>
-                    <Navigation_Controller click={this.OnSelect} selectedKey={this.state.selectedKey}/>
-                </Card>
-                <GetData_Controller selectedKey={this.state.selectedKey} selectedObj={this.state.selectedObj}/>
-            </div>
-        );
-    }
-});
+    this.OnSelect = this.OnSelect.bind(this);
+  }
+
+  OnSelect (key,obj) {
+    this.setState({
+      selectedKey:key,
+      selectedObj:obj
+    });
+  }
+
+  render () {
+    return(
+      <div className="container">
+        <Navigation_Controller click={this.OnSelect} selectedKey={this.state.selectedKey}/>
+        <GetData_Controller selectedKey={this.state.selectedKey} selectedObj={this.state.selectedObj}/>
+      </div>
+    );
+  }
+}
+
+export default Base;

@@ -21,7 +21,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "webpack -p --progress"
+    "build": "webpack -p --progress",
+    "dev": "webpack --progress"
   },
   "author": "Paul Reesman <Paul.R.Reesman@gmail.com>",
   "license": "ISC",

@@ -3,9 +3,17 @@ html, body {
 }
 
 body {
-    background-color:#37474f;
+    background-color:#c8e6c9;
 }
 
 .center-btn {
     text-align:center;
+}
+
+.tabs {
+    background-color:#455a64;
+}
+
+.tabs .tab a {
+    color:#ffffff;
 }

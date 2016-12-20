@@ -1,53 +1,59 @@
 import { Button } from 'react-materialize'
-let PDF = require('react-pdf');
-let React = require('react');
+import PDF from 'react-pdf';
+import React, { Component } from 'react';
 
-var GetData_PDF = React.createClass({
-    getInitialState: function () {
-        return {
-            currentPage:1,
-            pages:0
-        }
-    },
+class GetData_PDF extends Component {
+  constructor (props) {
+    super(props);
 
-    _onDocumentComplete: function(pages) {
-        this.setState({
-            pages: pages
-        });
-    },
+    this.state = {
+      currentPage:1,
+      pages:0
+    };
 
-    prevPage: function(ev) {
-        ev.preventDefault();
-        this.setState({
-            currentPage: this.state.currentPage > 1 ? this.state.currentPage - 1 : 1
-        });
-    },
+    this._onDocumentComplete = this._onDocumentComplete.bind(this);
+    this.prevPage = this.prevPage.bind(this);
+    this.nextPage = this.nextPage.bind(this);
+  }
 
-    nextPage: function(ev) {
-        ev.preventDefault();
-        this.setState({
-            currentPage: this.state.currentPage < this.state.pages ? this.state.currentPage + 1 : this.state.pages
-        });
-    },
+  _onDocumentComplete (pages) {
+    this.setState({
+      pages: pages
+    });
+  }
 
-    render: function() {
-        return (
-            <div>
-                <div className="center-btn">
-                    <Button waves="light" onClick={this.prevPage}>Previous page</Button>
-                    <Button waves="light" onClick={this.nextPage}>Next page</Button>
-                </div>
-                <div className="center-btn">
-                    <PDF file="./images/Reesman_Resume_Graduate.pdf" page={this.state.currentPage} onDocumentComplete={this._onDocumentComplete}/>
-                </div>
-                <div className="center-btn">
-                    <a href="./images/Reesman_Resume_Graduate.pdf" download="Reesman_Resume">
-                        <Button waves="light">Download</Button>
-                    </a>
-                </div>
-            </div>
-        )
-    }
-});
+  prevPage (ev) {
+    ev.preventDefault();
+    this.setState({
+      currentPage: this.state.currentPage > 1 ? this.state.currentPage - 1 : 1
+    });
+  }
 
-module.exports = GetData_PDF;
+  nextPage (ev) {
+    ev.preventDefault();
+    this.setState({
+      currentPage: this.state.currentPage < this.state.pages ? this.state.currentPage + 1 : this.state.pages
+    });
+  }
+
+  render () {
+    return (
+      <div>
+        <div className="center-btn">
+          <Button waves="light" onClick={this.prevPage}>Previous page</Button>
+          <Button waves="light" onClick={this.nextPage}>Next page</Button>
+        </div>
+        <div className="center-btn">
+          <PDF file="./images/Reesman_Resume_Graduate.pdf" page={this.state.currentPage} onDocumentComplete={this._onDocumentComplete}/>
+        </div>
+        <div className="center-btn">
+          <a href="./images/Reesman_Resume_Graduate.pdf" download="Reesman_Resume">
+            <Button waves="light">Download</Button>
+          </a>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default GetData_PDF;

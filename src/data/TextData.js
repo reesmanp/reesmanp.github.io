@@ -38,14 +38,14 @@ class GetData_Text extends Component {
             <br />
             Favorite Languages:
             <Row>
-              <Col s={12}>
-                {Object.keys(lang).map((key, idx) =>
+              {Object.keys(lang).map((key, idx) =>
+                <Col s={2} m={2} l={2}>
                   <Chip key={this.props.selectedKey + '_' + key}>
                     <a href={lang[key][0]} target="_blank"><img src={lang[key][1]} /></a>
                     {key}
                   </Chip>
-                )}
-              </Col>
+                </Col>
+              )}
             </Row>
           </div>
           :

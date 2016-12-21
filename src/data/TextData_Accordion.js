@@ -7,8 +7,9 @@ class GetData_Accordion extends Component {
   constructor (props) {
     super(props);
 
+    const defaultActiveKey = (Object.keys(this.props.selectedObj).length === 1) ? 0 : -1;
     this.state = {
-      active: -1
+      active: defaultActiveKey
     };
 
     this.onChange = this.onChange.bind(this);

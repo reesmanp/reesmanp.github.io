@@ -11,7 +11,6 @@ class GetData_Controller extends Component {
     switch (this.props.selectedKey) {
       case "Welcome":
       case "Bio":
-        return(<GetData_Text selectedKey={this.props.selectedKey} selectedObj={this.props.selectedObj} chips="true"/>);
       case "Portfolio":
       case "Tools I Use":
         return(<GetData_NestedText selectedKey={this.props.selectedKey} selectedObj={this.props.selectedObj}/>);

@@ -11,7 +11,7 @@ class Navigation_Controller extends Component {
   render () {
     return(
       <div>
-        <Navbar className="blue-grey darken-2" brand="Paul R. Reesman" right>
+        <Navbar className="blue-grey darken-2" brand="&nbsp;&nbsp;Paul R. Reesman" right>
           {Object.keys(data).map( (key,idx) =>
             <NavItem className={this.props.selectedKey == key ? "active" : "not-active"}
                      key={key}

@@ -77,6 +77,15 @@
 				"Lessons Learned": "Always actually review the code you are reviewing and pay special close attention to which branch is being merged into what. Also, pay attention to when you are deleting branches; Ask yourself, 'should I really delete this branch?' Lastly, double check that you have permissions up that say Develop <b>and<\/b> Master branches can only be changed through pull requests and that neither can be deleted.",
 				"Date Posted": "10/21/2016"
 			}
+		},
+		"2017": {
+			"Testing is a Thing": {
+				"Everyone is Accountable": "I am currently developing a RESTful interface at work using HapiJS and this interface is only a small (but important) piece of the whole project. Each and every person on the team has their own part they are building and the project is moving along well. Since we are all solely responsible for our parts, we want the code quality to be as good as possible; each part has become, in a sense, our babies. Now I will boldly say that if any person on the team isn't testing their portion individually, they aren't doing their job.",
+				"Batch Testing Helps Find Corner Cases": "Now since we are all testing our own interfaces, we have no idea if they play nice with each others. We can message each other over HipChat or go to a whiteboard and draw things out, but until we actually send messages to each other we will never know if it works. Sure, I can send myself HTTP requests to test, but I won't be able to fully send myself all things another portion of the architecture is supposed to send. The last couple of days have been testing, and thank goodness we have done batch testing. The first couple messages returned 400 and 500 errors and I was able to fix those easily. We re-tested those few and 200's were returned and all was good. Instead of calling it good, we decided to send nearly 1000 more messages through. That is when things really broke.",
+				"Regression, Integration, and Click Testing": "After the batch testing and the fixes that came along with it, it was now time to add more features. After the features were added, then more testing and so on. The batch testing was a form of integration testing, so we are good on that count. But how do we know if my new features don't break the fixes for old bugs? Keep sending the old messages through. Make sure that the messages that worked previously still work and then send in the new messages to test the new features. Now nothing is getting through your cold developing hands. But how do you know the data the passed through was valid? Our team is using old fashioned click testing. Nothing fancy but if it looks right on the UI, it has gone right.",
+				"Lessons Learned": "You may send some messages through and they might break things. Go ahead and fix them, but don't stop there. Send more messages through and fix the things that break. Don't forget to keep testing the old and the new. Keep going until all corner cases have been found. It is part of your job, not someone else's.",
+				"Date Posted": "1/5/2017"
+			}
 		}
 	},
 	"Contact Me": {

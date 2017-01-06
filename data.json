@@ -2,7 +2,7 @@
 	"Welcome": {
 		"Välkommen": {
 			"Welcome": "Welcome to my online portfolio! Feel free to browse around my webpage and even send me an email if you have any questions. If you are a possible employer or someone who wants some work done, don't feel shy; please reach out and let me know what you are looking for. Safe travels, friend!",
-			"Open Source Projects I Have Contributed To": "<a href=\"https:\/\/github.com\/react-materialize\/react-materialize\" target=\"_blank\">React Materialize<\/a><br \/><a href=\"https:\/\/github.com\/PCGen\/pcgen\" target=\"_blank\">PCGen<\/a>"
+			"Open Source Projects I Have Contributed To": "<a href=\"https:\/\/github.com\/react-materialize\/react-materialize\" target=\"_blank\">React Materialize (Collaborator Status)<\/a><br \/><a href=\"https:\/\/github.com\/PCGen\/pcgen\" target=\"_blank\">PCGen<\/a>"
 		}
 	},
 	"Bio": {

@@ -7,7 +7,7 @@ class GetData_Text extends Component {
     let lang = {
       ReactJS: [
         "https://facebook.github.io/react/",
-        "https://facebook.github.io/react/img/logo.svg"
+        "https://cdn.worldvectorlogo.com/logos/react.svg"
       ],
       NodeJS: [
         "https://nodejs.org/",

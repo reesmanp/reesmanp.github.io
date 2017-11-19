@@ -15,10 +15,10 @@ class Base extends Component {
     this.OnSelect = this.OnSelect.bind(this);
   }
 
-  OnSelect (key,obj) {
+  OnSelect (key, obj) {
     this.setState({
-      selectedKey:key,
-      selectedObj:obj
+      selectedKey: key,
+      selectedObj: obj
     });
   }
 

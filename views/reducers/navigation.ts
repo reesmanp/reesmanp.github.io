@@ -8,7 +8,8 @@ interface Action {
 
 const initialState = Map({
   navigation: Map({
-    selectedItem: 0
+    selectedItem: 0,
+    tabs: ['Welcome', 'Bio', 'Portfolio', 'Tools I Use', 'Resume', 'Blog', 'Contact Me']
   })
 });
 

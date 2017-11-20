@@ -1,6 +1,10 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 
-const Banner = props => (
+interface BannerProps {
+}
+
+const BannerComponent = (props: BannerProps) => (
   <section className='hero is-primary is-bold'>
     <div className='hero-body'>
       <div className='container'>
@@ -14,5 +18,7 @@ const Banner = props => (
     </div>
   </section>
 );
+
+const Banner = connect()(BannerComponent);
 
 export default Banner;

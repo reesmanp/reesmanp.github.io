@@ -5,36 +5,37 @@ import { navigation as Actions } from '../actions';
 interface NavigationProps {
   selectedItem: number;
   selectItem: (item: number) => undefined;
+  tabs: string[]
 }
 
-const mapStateToProps = (state: any) => ({
-  selectedItem: state.getIn(['navigation', 'selectedItem'])
+const mapStateToProps = state => ({
+  selectedItem: state.getIn(['navigation', 'selectedItem']),
+  tabs: state.getIn(['navigation', 'tabs'])
 });
 
-const mapDispatchToProps = (dispatch: any) => ({
+const mapDispatchToProps = dispatch => ({
   selectItem: (item: number) => dispatch(Actions.selectBanner(item))
 });
 
-const clickHandler = (evt: any, dispatch: (idx: number) => undefined) => dispatch(evt.target.value);
+const clickHandler = (evt, dispatch: (idx: number) => undefined) => dispatch(evt.target.parentNode.value);
 
 const NavigationComponent = (props: NavigationProps) => (
   <div className='tabs is-boxed is-fullwidth'>
     <ul>
-      {['Welcome', 'Bio', 'Portfolio', 'Tools I Use', 'Resume', 'Blog', 'Contact Me']
-        .map((cv: string, idx: number) => {
-          const classnames = `${props.selectedItem === idx ? 'is-active' : ''}`;
-          return (
-            <li
-              key={cv}
-              className={classnames}
-              onClick={evt => clickHandler(evt, props.selectItem)}
-              value={idx}
-            >
-              <a>{cv}</a>
-            </li>
-          );
-        })
-      }
+      {props.tabs.map((cv: string, idx: number) => {
+        const classnames = `${props.selectedItem === idx ? 'is-active' : ''}`;
+        return (
+          <li
+            key={cv}
+            className={classnames}
+            value={idx}
+          >
+            <a onClick={evt => clickHandler(evt, props.selectItem)}>
+              {cv}
+            </a>
+          </li>
+        );
+      })}
     </ul>
   </div>
 );

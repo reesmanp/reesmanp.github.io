@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #c8e6c9;
+}
+
+.navigation {
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    font-size: x-large;
+}
+
+.center-btn {
+    text-align: center;
+}
+
+.tabs {
+    background-color: #455a64;
+}
+
+.tabs .tab a {
+    color: #ffffff;
+}

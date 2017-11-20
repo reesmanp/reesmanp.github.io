@@ -1,12 +1,17 @@
 import * as React from 'react';
-import { Banner } from './Banner';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import appStore from '../reducers';
+import Banner from './Banner';
+import Navigation from './Navigation';
 
-export class Base extends React.Component<{}, {}> {
-  render () {
-    return (
-      <div>
-        <Banner/>
-      </div>
-    );
-  }
-}
+const store = createStore(appStore);
+
+export const Base = () => (
+  <Provider store={store}>
+    <div className='container is-fluid'>
+      <Banner/>
+      <Navigation/>
+    </div>
+  </Provider>
+);

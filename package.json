@@ -10,11 +10,15 @@
   "dependencies": {
     "@types/react": "^16.0.25",
     "@types/react-dom": "^16.0.3",
-    "muicss": "^0.9.29",
+    "@types/react-redux": "^5.0.13",
+    "@types/redux-immutable": "^3.0.38",
+    "bulma": "^0.6.1",
+    "immutable": "^3.8.2",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-immutable": "^4.0.0"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.4.0",

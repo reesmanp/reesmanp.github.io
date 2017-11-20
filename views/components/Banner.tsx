@@ -1,9 +1,18 @@
 import * as React from 'react';
-//import * as AppBar from 'muicss/lib/react/appbar'; <-- TODO: wait for .ts types integration
-const AppBar = require('muicss/lib/react/appbar');
 
-export const Banner: React.SFC<{}> = props => (
-  <AppBar className='navigation'>
-    Paul R. Reesman
-  </AppBar>
+const Banner = props => (
+  <section className='hero is-primary is-bold'>
+    <div className='hero-body'>
+      <div className='container'>
+        <h1 className='title'>
+          Paul R. Reesman
+        </h1>
+        <h2 className='subtitle'>
+          Välkommen to my portfolio!
+        </h2>
+      </div>
+    </div>
+  </section>
 );
+
+export default Banner;

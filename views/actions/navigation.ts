@@ -1,9 +1,10 @@
-const SELECTED_BANNER = 'SELECTED_BANNER';
-const selectedBanner = (item: number) => ({
-  type: SELECTED_BANNER,
+const SELECT_BANNER = 'SELECT_BANNER';
+const selectBanner = (item: number) => ({
+  type: SELECT_BANNER,
   selectedItem: item
 });
 
-export {
-  selectedBanner
+export const navigation = {
+  SELECT_BANNER: SELECT_BANNER,
+  selectBanner: selectBanner
 };

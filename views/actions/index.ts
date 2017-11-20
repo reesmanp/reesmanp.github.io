@@ -1,5 +1,1 @@
-import { selectedBanner } from './navigation';
-
-export {
-  selectedBanner
-}
+export * from './navigation';

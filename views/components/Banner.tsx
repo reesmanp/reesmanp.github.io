@@ -12,7 +12,7 @@ const BannerComponent = (props: BannerProps) => (
           Paul R. Reesman
         </h1>
         <h2 className='subtitle'>
-          Välkommen to my portfolio!
+          Engineer I, Nordstrom Inc.
         </h2>
       </div>
     </div>

@@ -11,7 +11,9 @@ const Bio = Map({
   Bio: Map({
     Introduction: 'My name is Paul Reesman and I have a long and colorful history filled with experience, creativity, curiosity, and leadership. Originally from Phoenix, Arizona I joined the army after high school and became a member of the elite unit known as \'Rangers\' up in the state of Washington. Throughout my tenure I advanced to the rank of sergeant and deployed to Afghanistan on four separate occasions. Upon separating from the armed forces, I was left with the same thoughts of nearly any other veteran, \'What next?\'',
     College: 'I looked toward college as the next chapter of my life started to unfold. Starting off at Arizona State University, I felt that the school was not a good match for who I was. I then transferred to Oregon State University and continued on my track pursuing a four year degree in computer science. It only took me three years from the end of my enlistment to gain my degree. During my last term, I looked forward to finally joining the industry.',
-    Career: 'Immediately after graduating from college, I received an email from Seattle Children\'s Hospital offering me a position as an application developer up in Seattle. This opportunity provided me to get my foot in the door in the Seattle area. A month or two after moving to Seattle I was also hired on by <a href=https://www.codingwithkids.com" target="_blank">Coding With Kids</a> as an instructor. I have been teaching coding to children ever since then.',
+    'Seattle Children\'s Hospital': 'Immediately after graduating from college, I received an email from Seattle Children\'s Hospital offering me a position as an application developer up in Seattle. This opportunity provided me to get my foot in the door in the Seattle area. This is where I learned ReactJS and DevOps. I stayed there for a little over a year and a half and loved every moment.',
+    'Coding With Kids': 'A month or two after moving to Seattle I was also hired on by <a href=https://www.codingwithkids.com" target="_blank">Coding With Kids</a> as an instructor. I ended up teaching children how to code for a little over a year.',
+    Nordstrom: 'I am currently employed at Nordstrom as an Engineer I, working on their product page. Here I am using ReactJS, Redux, NodeJS, and C# to build and maintain the website.',
     'Special Projects of Note': 'I am one of the founders of an app called Lender. Lender is a platform for people to administer nano-loans anonymously. This application is currently under development and the release of Alpha testing is imminent. You can find more at <a href="www.wearelender.com" target="_blank">wearelender.com</a>',
     Interests: 'Lastly, I am looking forward to grad school as my interests are broad: Artificial Intelligence, Parallelization/Distributed Computing (Including Cloud and Enterprise computing), and Compiler Design.'
   })
@@ -19,15 +21,17 @@ const Bio = Map({
 
 const Portfolio = Map({
   'Current Projects': Map({
-    Github: 'All of my current projects and most of my completed projects\' source code can be found at my github <a href="https://github.com/reesmanp" target="_blank">repository</a> including the source code for this website <a href="https://github.com/reesmanp/reesmanp.github.io" target="_blank">here</a>.',
     Lender: 'I am co-founder and lead backend developer for a new and upcoming app called Lender. The source code lives in a private repo on GitHub, thus I cannot share it with you. To learn more about Lender, visit us at <a href="www.wearelender.com" target="_blank">wearelender.com</a> or visit us on <a href="https://www.facebook.com/wearelender/" target="_blank">Facebook</a> or even follow us on Twitter at <a href="https://twitter.com/wearelender" target="_blank">@WeAreLender</a>',
     BoothTool: 'I am currently building a ReactJS program to be used in festival booths to help with front-end transactions and kitchen area accountability. This is being built with TypeScript and will be deployed as a standalone application. My first version of this was with Python using the Tkinter toolkit. Building and maintaining a fitting frontend for the app became overwhelming and I decided a programming language switch was necessary. The old Python code lives in it\'s own repository for nostalgia\'s sake.',
-    '#': 'I am developing my own programming language called #. Since that symbol has several pronunciations (mostly depending on which generation you relate to), it has no standard verbal name. This will be a compiled language that will hopefully be be completely customizable with what I am calling attributes.'
+    'End of the Cave': 'I am currently making a game in Unity using c#. This is the bulk of my c# knowledge and it heavily reminds me of my early Java years. The game is in the very early stages but still worth noting.'
   }),
   'Completed Projects': Map({
     'Laser Targeting Device': 'I was employed as the \'Senior Computer Science Expert\' for a laser targeting device prototype that was being researched at the Oregon State University which was funded by the United States Army. I designed several User Interfaces to help find the most \'intuitive\' format based off of rel soldiers feedback. <b>January 2015 - December 2015</b>',
     'Splunk App': 'For my Senior Design Project, I was assigned into a random group of 4 students and we were randomly assigned a real life project sponsored by an actual company. I was assigned to build a Splunk Application for Elemental Technologies. <b>September 2014 - June 2015</b>',
     MicroGravity: 'During my stint at Arizona State University I joined the Microgravity team. We proposed an experiment to NASA where we would study dust coagulation in microgravity to help explain how galaxies are formed. We were one of only a few teams to get selected and be able to conduct our experiment on NASA\'s microgravity plane. <b>October 2013 - Spring 2014</b>'
+  }),
+  'Repository': Map({
+    GitHub: 'All of my current projects and most of my completed projects\' source code can be found at my github <a href="https://github.com/reesmanp" target="_blank">repository</a> including the source code for this website <a href="https://github.com/reesmanp/reesmanp.github.io" target="_blank">here</a>.'
   })
 });
 
@@ -53,14 +57,18 @@ const Resume = Map({
   Resume: Map({})
 });
 
+/*
 const Blog = Map({
   '2016': Map({}),
   '2017': Map({})
 });
+*/
 
 const Contact = Map({
   Contact: Map({
-    Email: '<a href="mailto:Paul.R.Reesman@gmail.com">Paul.R.Reesman@gmail.com</a>'
+    Email: '<a href="mailto:Paul.R.Reesman@gmail.com">Paul.R.Reesman@gmail.com</a>',
+    GitHub: 'My <a href="https://github.com/reesmanp">GitHub</a> profile.',
+    Gitter: 'Active member in the <a href="https://gitter.im/nodejs/node">nodeJS gitter chatroom</a> as@reesmanp.'
   })
 });
 
@@ -70,6 +78,6 @@ export const textStore = Map({
   Portfolio: Portfolio,
   'Tools I Use': Tools,
   Resume: Resume,
-  Blog: Blog,
+  //Blog: Blog,
   'Contact Me': Contact
 });

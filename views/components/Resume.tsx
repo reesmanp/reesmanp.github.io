@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { resume as Actions } from '../actions';
 import { Document, Page } from 'react-pdf/build/entry.webpack';
 
-const myResume = require('../images/Reesman_Resume.pdf');
+const myResume = require('../../static/images/Reesman_Resume.pdf');
 
 interface ResumeProps {
   isActive: boolean;
@@ -24,17 +24,19 @@ const mapDispatchToProps = dispatch => ({
   changePage: (item: number) => dispatch(Actions.changePage(item))
 });
 
+const classnames = 'button is-primary is-outlined';
+
 const ResumeComponent = (props: ResumeProps) => (
   props.isActive &&
     <div className='card has-text-centered'>
       <span>
-        <a className='button is-primary' onClick={() => props.page > 0 && props.changePage(props.page--)}>
+        <a className={classnames} onClick={() => props.page > 0 && props.changePage(props.page--)}>
           Back
         </a>
-        <a className='button is-primary' href={myResume} download='Reesman_Resume.pdf'>
+        <a className={classnames} href={myResume} download='Reesman_Resume.pdf'>
           Download
         </a>
-        <a className='button is-primary' onClick={() => props.page < props.pages && props.changePage(props.page++)}>
+        <a className={classnames} onClick={() => props.page < props.pages && props.changePage(props.page++)}>
           Forward
         </a>
       </span>

@@ -1,8 +1,10 @@
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
     entry: './views/index.tsx',
     output: {
         filename: 'portfolio.min.js',
-        path: `${__dirname}/dist`
+        path: `${__dirname}/static/js`
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -15,6 +17,9 @@ module.exports = {
 
     module: {
         rules: [
+            // All files with a '.scss' extension will be handled by 'sass-loader'.
+            { test: /\.scss$/, loader: ExtractTextWebpackPlugin.extract('css-loader!sass-loader') },
+
             // All files with a '.css' extension will be handled by 'css-loader'.
             { test: /\.css$/, loader: 'css-loader' },
 
@@ -28,6 +33,13 @@ module.exports = {
             { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
         ]
     },
+
+    plugins: [
+        new ExtractTextWebpackPlugin({
+            filename: 'static/css/portfolio.css',
+            allChunks: true
+        })
+    ],
 
     // When importing a module whose path matches one of the following, just
     // assume a corresponding global variable exists and use that instead.

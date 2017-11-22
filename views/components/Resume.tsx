@@ -8,9 +8,9 @@ const myResume = require('../images/Reesman_Resume.pdf');
 interface ResumeProps {
   isActive: boolean;
   pages: number;
-  page: number
-  addPages: (item: number) => undefined,
-  changePage: (item: number) => undefined
+  page: number;
+  addPages: (item: number) => undefined;
+  changePage: (item: number) => undefined;
 }
 
 const mapStateToProps = state => ({

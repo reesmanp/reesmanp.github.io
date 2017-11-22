@@ -4,7 +4,7 @@ module.exports = {
     entry: './views/index.tsx',
     output: {
         filename: 'portfolio.min.js',
-        path: `${__dirname}/static/js`
+        path: `${__dirname}/dist`
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -36,7 +36,7 @@ module.exports = {
 
     plugins: [
         new ExtractTextWebpackPlugin({
-            filename: 'static/css/portfolio.css',
+            filename: 'portfolio.css',
             allChunks: true
         })
     ],

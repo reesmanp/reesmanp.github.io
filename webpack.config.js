@@ -4,7 +4,8 @@ module.exports = {
     entry: './views/index.tsx',
     output: {
         filename: 'portfolio.min.js',
-        path: `${__dirname}/dist`
+        path: `${__dirname}/dist`,
+        publicPath: '/reesmanp.github.io/dist/'
     },
 
     // Enable sourcemaps for debugging webpack's output.

@@ -1,5 +1,3 @@
-@import "~bulma";
-
 html, body {
   height: 100%;
 }
@@ -34,4 +32,6 @@ body {
   }
 }
 
-$tabs-link-active-color: #c8e6c9;
+$tabs-link-active-color: #00d1b2;
+
+@import '~bulma';

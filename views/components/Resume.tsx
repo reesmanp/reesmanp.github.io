@@ -1,15 +1,26 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { resume as Actions } from '../actions';
-import { Document, Page } from 'react-pdf/build/entry.webpack';
+import { Document, Page, setOptions } from 'react-pdf/build/entry.webpack';
 
 const myResume = require('../../static/images/Reesman_Resume.pdf');
+setOptions({
+  workerSrc: '/dist/pdf.worker.js'
+});
+
+interface pdfInfo {
+  numPages: number;
+}
+
+interface pdfObject {
+  pdfInfo: pdfInfo;
+}
 
 interface ResumeProps {
   isActive: boolean;
   pages: number;
   page: number;
-  addPages: (item: number) => undefined;
+  addPages: (item: pdfObject) => undefined;
   changePage: (item: number) => undefined;
 }
 
@@ -20,7 +31,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addPages: (item: number) => dispatch(Actions.pages(item)),
+  addPages: (item: pdfObject) => dispatch(Actions.pages(item.pdfInfo.numPages)),
   changePage: (item: number) => dispatch(Actions.changePage(item))
 });
 
@@ -30,20 +41,28 @@ const ResumeComponent = (props: ResumeProps) => (
   props.isActive &&
     <div className='card has-text-centered'>
       <span>
-        <a className={classnames} onClick={() => props.page > 0 && props.changePage(props.page--)}>
-          Back
+        <a className={classnames} onClick={() => props.page > 1 && props.changePage(props.page - 1)}>
+          &lt;&lt; Back
         </a>
         <a className={classnames} href={myResume} download='Reesman_Resume.pdf'>
           Download
         </a>
-        <a className={classnames} onClick={() => props.page < props.pages && props.changePage(props.page++)}>
-          Forward
+        <a className={classnames} onClick={() => props.page < props.pages && props.changePage(props.page + 1)}>
+          Forward &gt;&gt;
         </a>
       </span>
-      <Document file={myResume} onLoadSuccess={props.addPages}>
-        <Page pageNumber={props.page} />
-      </Document>
+      <div className='columns'>
+        <div className='column' />
+        <div className='column'>
+          <Document file={myResume} onLoadSuccess={props.addPages}>
+            <Page pageNumber={props.page} />
+          </Document>
+        </div>
+        <div className='column' />
+      </div>
       <p>Page {props.page} of {props.pages}</p>
+      <br />
+      <br />
     </div>
 );
 

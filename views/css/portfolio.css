@@ -3,8 +3,8 @@ html, body {
 }
 
 body {
+    overflow: auto;
     animation: 20s infinite alternate colorChange;
-
     -webkit-animation: 20s infinite alternate colorChange;
 }
 

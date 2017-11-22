@@ -5,6 +5,7 @@ import appStore from '../reducers';
 import Banner from './Banner';
 import Navigation from './Navigation';
 import Portfolio from './Portfolio';
+import Resume from './Resume';
 
 const store = createStore(appStore);
 
@@ -14,6 +15,7 @@ export const Base = () => (
       <Banner/>
       <Navigation/>
       <Portfolio/>
+      <Resume/>
     </div>
   </Provider>
 );

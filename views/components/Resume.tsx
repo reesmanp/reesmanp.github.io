@@ -41,26 +41,25 @@ const ResumeComponent = (props: ResumeProps) => (
   props.isActive &&
     <div className='card has-text-centered'>
       <span>
-        <a className={classnames} onClick={() => props.page > 1 && props.changePage(props.page - 1)}>
+        <button className={classnames} onClick={() => props.changePage(props.page - 1)} disabled={props.page <= 1}>
           &lt;&lt; Back
-        </a>
+        </button>
         <a className={classnames} href={myResume} download='Reesman_Resume.pdf'>
           Download
         </a>
-        <a className={classnames} onClick={() => props.page < props.pages && props.changePage(props.page + 1)}>
+        <button className={classnames} onClick={() => props.changePage(props.page + 1)} disabled={props.page >= props.pages}>
           Forward &gt;&gt;
-        </a>
+        </button>
       </span>
-      <div className='columns'>
+      <div className='columns is-gapless'>
         <div className='column' />
-        <div className='column'>
+        <div className='column box'>
           <Document file={myResume} onLoadSuccess={props.addPages}>
             <Page pageNumber={props.page} />
           </Document>
         </div>
         <div className='column' />
       </div>
-      <p>Page {props.page} of {props.pages}</p>
       <br />
       <br />
     </div>

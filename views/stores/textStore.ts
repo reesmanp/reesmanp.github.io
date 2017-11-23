@@ -26,7 +26,7 @@ const Portfolio = Map({
     'End of the Cave': 'I am currently making a game in Unity using c#. This is the bulk of my c# knowledge and it heavily reminds me of my early Java years. The game is in the very early stages but still worth noting.'
   }),
   'Completed Projects': Map({
-    'Laser Targeting Device': 'I was employed as the \'Senior Computer Science Expert\' for a laser targeting device prototype that was being researched at the Oregon State University which was funded by the United States Army. I designed several User Interfaces to help find the most \'intuitive\' format based off of rel soldiers feedback. <b>January 2015 - December 2015</b>',
+    'Laser Targeting Device': 'I was employed as the \'Senior Computer Science Expert\' for a laser targeting device prototype that was being researched at Oregon State University which was funded by the United States Army. I designed several User Interfaces to help find the most \'intuitive\' format based off of real soldiers\' feedback. <b>January 2015 - December 2015</b>',
     'Splunk App': 'For my Senior Design Project, I was assigned into a random group of 4 students and we were randomly assigned a real life project sponsored by an actual company. I was assigned to build a Splunk Application for Elemental Technologies. <b>September 2014 - June 2015</b>',
     MicroGravity: 'During my stint at Arizona State University I joined the Microgravity team. We proposed an experiment to NASA where we would study dust coagulation in microgravity to help explain how galaxies are formed. We were one of only a few teams to get selected and be able to conduct our experiment on NASA\'s microgravity plane. <b>October 2013 - Spring 2014</b>'
   }),

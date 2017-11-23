@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Professional Portfolio",
   "scripts": {
     "build": "webpack -p --progress",

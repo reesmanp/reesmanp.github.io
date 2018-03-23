@@ -1,0 +1,30 @@
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    border: 1px outset #7a7a7a;
+    margin: 32px 0 0;
+    padding: 8px 16px 16px;
+    background-color: #fcfcfc;
+}
+
+.item {
+    flex-grow: 1;
+}
+
+.header {
+}
+
+.subHeader {
+    color: #7a7a7a;
+    border-top: 1px outset #7a7a7a;
+    border-bottom: 1px inset #7a7a7a;
+    padding: 0.83em 0;
+}
+
+.text {
+    margin: 0 16px;
+}
+
+.text a {
+    text-decoration: none;
+}

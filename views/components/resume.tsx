@@ -2,6 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { resume as Actions } from '../actions';
 import { Document, Page, setOptions } from 'react-pdf';
+import * as styles from '../css/resume.css';
 
 const myResume = require('../../static/images/Reesman_Resume.pdf');
 setOptions({
@@ -35,30 +36,30 @@ const mapDispatchToProps = dispatch => ({
   changePage: (item: number) => dispatch(Actions.changePage(item))
 });
 
-const classnames = 'button is-primary is-outlined';
-
 const ResumeComponent = (props: ResumeProps) => (
   props.isActive &&
-    <div className='card has-text-centered'>
-      <span>
-        <button className={classnames} onClick={() => props.changePage(props.page - 1)} disabled={props.page <= 1}>
+    <div className={styles.resume}>
+      <span className={styles.buttonGroup}>
+        <button
+          className={styles.button}
+          onClick={() => props.changePage(props.page - 1)} disabled={props.page <= 1}
+        >
           &lt;&lt; Back
         </button>
-        <a className={classnames} href={myResume} download='Reesman_Resume.pdf'>
+        <a className={styles.download} href={myResume} download='Reesman_Resume.pdf'>
           Download
         </a>
-        <button className={classnames} onClick={() => props.changePage(props.page + 1)} disabled={props.page >= props.pages}>
+        <button
+          className={styles.button}
+          onClick={() => props.changePage(props.page + 1)} disabled={props.page >= props.pages}
+        >
           Forward &gt;&gt;
         </button>
       </span>
-      <div className='columns is-gapless'>
-        <div className='column' />
-        <div className='column box'>
-          <Document file={myResume} onLoadSuccess={props.addPages}>
-            <Page pageNumber={props.page} />
-          </Document>
-        </div>
-        <div className='column' />
+      <div className={styles.document}>
+        <Document file={myResume} onLoadSuccess={props.addPages}>
+          <Page pageNumber={props.page} />
+        </Document>
       </div>
       <br />
       <br />

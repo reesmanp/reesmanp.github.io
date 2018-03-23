@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { textStore } from '../stores';
+import * as styles from '../css/portfolio.css';
 
 interface PortfolioProps {
   isActive: boolean;
@@ -16,32 +17,22 @@ const mapStateToProps = state => ({
 
 const PortfolioComponent = (props: PortfolioProps) => (
   props.isActive &&
-    <div>
-      <div className='card'>
-        {textStore.get(`${props.tabs[props.selectedItem]}`).map((cv, k) => (
-          <div>
-            <header className='card-header is-size-2'>
-              <p className='card-header-title'>
-                {k}
-              </p>
-            </header>
-            {cv.map((ccv: string, kk) => (
-              <div className='card'>
-                <header className='card-header is-size-3'>
-                  <p className='card-header-title has-text-grey'>
-                    {kk}
-                  </p>
-                </header>
-                <div className='card-content'>
-                  <div dangerouslySetInnerHTML={{__html: ccv}} />
-                </div>
-              </div>
-            )).values()}
-          </div>
-        )).values()}
-      </div>
-      <br />
-      <br />
+    <div className={styles.portfolio}>
+      {textStore.get(`${props.tabs[props.selectedItem]}`).map((cv, k) => (
+        <div className={styles.item}>
+          <h1 className={styles.header}>
+            {k}
+          </h1>
+          {cv.map((ccv: string, kk) => (
+            <div>
+              <h2 className={styles.subHeader}>
+                {kk}
+              </h2>
+              <div className={styles.text} dangerouslySetInnerHTML={{__html: ccv}} />
+            </div>
+          )).values()}
+        </div>
+      )).values()}
     </div>
 );
 

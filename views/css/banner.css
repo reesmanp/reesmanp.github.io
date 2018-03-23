@@ -1,0 +1,34 @@
+.banner {
+    background-color: #00A06E;
+    padding: 48px;
+}
+
+.name {
+    color: white;
+    margin: 0;
+}
+
+.subBanner {
+    margin: 0;
+}
+
+.position {
+    color: white;
+    margin: 0 10px 0 0;
+    display: inline-block;
+}
+
+.company {
+    font-style: italic;
+    cursor: pointer;
+}
+
+a.company:link {
+    color: white;
+    text-decoration: none;
+}
+
+a.company:visited {
+    color: white;
+    text-decoration: none;
+}

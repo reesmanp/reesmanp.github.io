@@ -1,0 +1,33 @@
+.resume {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px outset #7a7a7a;
+    margin: 32px 0 0;
+    padding: 8px 16px 16px;
+    background-color: #fcfcfc;
+}
+
+.buttonGroup {
+    margin: 16px;
+}
+
+.button {
+    border: 2px solid #00A06E;
+    font-size: 12px;
+    background-color: white;
+    padding: 8px 16px;
+}
+
+.download {
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    margin: 0 16px;
+    border: 2px solid #00A06E;
+    padding: 8px 16px;
+}
+
+.document {
+    border: 1px solid black;
+}

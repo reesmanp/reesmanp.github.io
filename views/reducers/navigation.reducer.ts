@@ -7,13 +7,11 @@ interface Action {
 }
 
 const initialState = Map({
-  navigation: Map({
-    selectedItem: 0,
-    tabs: ['Welcome', 'Bio', 'Portfolio', 'Tools I Use', 'Resume', /*'Blog',*/ 'Contact Me']
-  })
+  selectedItem: 0,
+  tabs: ['Welcome', 'Bio', 'Portfolio', 'Tools I Use', 'Resume', /*'Blog',*/ 'Contact Me']
 });
 
-export const navigation = (state = initialState.get('navigation'), action: Action) => {
+export const navigation = (state = initialState, action: Action) => {
   switch (action.type) {
     case Actions.SELECT_BANNER:
       return state.set('selectedItem', action.selectedItem);

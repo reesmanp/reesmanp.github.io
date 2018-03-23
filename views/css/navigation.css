@@ -1,0 +1,20 @@
+.navbar {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navItem {
+    flex-grow: 1;
+    text-align: center;
+    padding: 16px;
+    border: 2px solid #00A06E;
+    cursor: pointer;
+}
+
+.isActive {
+    color: white;
+    background-color: #00A06E;
+    border-top: 2px solid white;
+}

@@ -1,1 +1,1 @@
-export * from './textStore';
+export * from './text.store';

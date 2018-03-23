@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { resume as Actions } from '../actions';
-import { Document, Page, setOptions } from 'react-pdf/build/entry.webpack';
+import { Document, Page, setOptions } from 'react-pdf';
 
 const myResume = require('../../static/images/Reesman_Resume.pdf');
 setOptions({

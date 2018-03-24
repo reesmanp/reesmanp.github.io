@@ -1,6 +1,7 @@
 .banner {
     background-color: #00A06E;
     padding: 48px;
+    border-bottom: 2px solid white;
 }
 
 .name {

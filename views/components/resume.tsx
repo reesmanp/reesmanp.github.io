@@ -61,8 +61,6 @@ const ResumeComponent = (props: ResumeProps) => (
           <Page pageNumber={props.page} />
         </Document>
       </div>
-      <br />
-      <br />
     </div>
 );
 

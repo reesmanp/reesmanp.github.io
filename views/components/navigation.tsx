@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { navigation as Actions } from '../actions';
+import * as styles from '../css/navigation.css';
 
 interface NavigationProps {
   selectedItem: number;
@@ -17,27 +18,21 @@ const mapDispatchToProps = dispatch => ({
   selectItem: (item: number) => dispatch(Actions.selectBanner(item))
 });
 
-const clickHandler = (evt, dispatch: (idx: number) => undefined) => dispatch(evt.target.parentNode.value);
+const clickHandler = (evt, dispatch: (idx: number) => undefined) => dispatch(evt.target.value);
 
 const NavigationComponent = (props: NavigationProps) => (
-  <div className='tabs is-boxed is-fullwidth'>
-    <ul>
-      {props.tabs.map((cv: string, idx: number) => {
-        const classnames = `${props.selectedItem === idx ? 'is-active' : ''}`;
-        return (
-          <li
-            key={cv}
-            className={classnames}
-            value={idx}
-          >
-            <a onClick={evt => clickHandler(evt, props.selectItem)}>
-              {cv}
-            </a>
-          </li>
-        );
-      })}
-    </ul>
-  </div>
+  <ul className={styles.navbar}>
+    {props.tabs.map((cv: string, idx: number) => (
+      <li
+        key={cv}
+        className={`${styles.navItem} ${props.selectedItem === idx && styles.isActive}`}
+        value={idx}
+        onClick={evt => clickHandler(evt, props.selectItem)}
+      >
+        {cv}
+      </li>
+    ))}
+  </ul>
 );
 
 const Navigation = connect(mapStateToProps, mapDispatchToProps)(NavigationComponent);

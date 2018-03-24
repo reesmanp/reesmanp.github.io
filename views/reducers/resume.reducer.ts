@@ -8,13 +8,11 @@ interface Action {
 }
 
 const initialState = Map({
-  resume: Map({
-    pages: 0,
-    page: 1
-  })
+  pages: 0,
+  page: 1
 });
 
-export const resume = (state = initialState.get('resume'), action: Action) => {
+export const resume = (state = initialState, action: Action) => {
   switch (action.type) {
     case Actions.PAGES:
       return state.set('pages', action.amount);

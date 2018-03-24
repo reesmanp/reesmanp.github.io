@@ -1,2 +1,2 @@
-export * from './navigation';
-export * from './resume';
+export * from './navigation.actions';
+export * from './resume.actions';

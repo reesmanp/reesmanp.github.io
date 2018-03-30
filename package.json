@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Professional Portfolio",
   "scripts": {
     "build": "webpack --progress --colors --display-error-details",
@@ -31,6 +31,7 @@
     "webpack-cli": "^2.0.13"
   },
   "author": "Paul Reesman <Paul.R.Reesman@gmail.com>",
-  "homepage": "https://github.com/reesmanp/reesmanp.github.io",
+  "repository": "https://github.com/reesmanp/reesmanp.github.io",
+  "homepage": "https://reesmanp.github.io",
   "license": "ISC"
 }

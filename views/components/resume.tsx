@@ -38,7 +38,7 @@ const mapDispatchToProps = dispatch => ({
 
 const getDocumentWidth = () => {
   if (screen.width < 480) {
-    return 300;
+    return 285;
   }
 };
 

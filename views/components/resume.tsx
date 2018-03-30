@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { resume as Actions } from '../actions';
-import { Document, Page, setOptions } from 'react-pdf';
+import { Document, Page, setOptions } from 'react-pdf/dist/entry.webpack';
 import * as styles from '../css/resume.css';
 
 const myResume = require('../../static/images/Reesman_Resume.pdf');
@@ -37,8 +37,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const getDocumentWidth = () => {
-  if (screen.width < 480) {
-    return 285;
+  if (window.innerWidth <= 700) {
+    return window.innerWidth * .75 ;
   }
 };
 

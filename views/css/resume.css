@@ -10,6 +10,7 @@
 
 .buttonGroup {
     margin: 16px;
+    display: flex;
 }
 
 .button {
@@ -35,10 +36,4 @@
 
 .document {
     border: 1px solid black;
-}
-
-@media screen and (max-width: 480px) {
-    .buttonGroup {
-        display: flex;
-    }
 }

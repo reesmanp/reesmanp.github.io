@@ -1,7 +1,10 @@
 module.exports = {
-    entry: './views/index.tsx',
+    entry: {
+        portfolio: './views/index.tsx'
+    },
     output: {
-        filename: 'portfolio.min.js',
+        filename: '[name].min.js',
+        chunkFilename: '[name].min.js',
         path: `${__dirname}/dist`,
         publicPath: '/reesmanp.github.io/dist/'
     },
@@ -40,12 +43,10 @@ module.exports = {
         }]
     },
 
-    // When importing a module whose path matches one of the following, just
-    // assume a corresponding global variable exists and use that instead.
-    // This is important because it allows us to avoid bundling all of our
-    // dependencies, which allows browsers to cache those libraries between builds.
     externals: {
         react: 'React',
-        'react-dom': 'ReactDOM'
+        'react-dom': 'ReactDOM',
+        'pdfjs-dist': 'pdfjsDistWebPdfViewer',
+        'pdfjs-dist/lib/web/pdf_link_service': 'pdfjsDistWebPdfViewer.PDFJS'
     },
 };

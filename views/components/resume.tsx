@@ -36,6 +36,12 @@ const mapDispatchToProps = dispatch => ({
   changePage: (item: number) => dispatch(Actions.changePage(item))
 });
 
+const getDocumentWidth = () => {
+  if (screen.width < 480) {
+    return 300;
+  }
+};
+
 const ResumeComponent = (props: ResumeProps) => (
   props.isActive &&
     <div className={styles.resume}>
@@ -58,7 +64,7 @@ const ResumeComponent = (props: ResumeProps) => (
       </span>
       <div className={styles.document}>
         <Document file={myResume} onLoadSuccess={props.addPages}>
-          <Page pageNumber={props.page} />
+          <Page pageNumber={props.page} width={getDocumentWidth()}/>
         </Document>
       </div>
     </div>

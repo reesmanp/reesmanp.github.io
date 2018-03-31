@@ -14,11 +14,15 @@ module.exports = {
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: ['.ts', '.tsx', '.js', '.json']
+        extensions: ['.ts', '.tsx', '.js', '.json', '.wasm']
     },
 
     module: {
         rules: [{
+            test: /\.wasm$/,
+            include: `${__dirname}/views/wasm`,
+            use: 'wasm-loader'
+        }, {
             test: /\.css$/,
             include: `${__dirname}/views`,
             use: ['style-loader', {

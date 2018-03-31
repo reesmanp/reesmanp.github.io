@@ -37,3 +37,9 @@
 .document {
     border: 1px solid black;
 }
+
+@media screen and (max-width: 431px) {
+    .button {
+        font-size: 10px;
+    }
+}

@@ -21,6 +21,7 @@ interface ResumeProps {
   isActive: boolean;
   pages: number;
   page: number;
+  pixels: number;
   addPages: (item: pdfObject) => undefined;
   changePage: (item: number) => undefined;
 }
@@ -28,7 +29,8 @@ interface ResumeProps {
 const mapStateToProps = state => ({
   isActive: state.getIn(['navigation', 'tabs'])[state.getIn(['navigation', 'selectedItem'])] === 'Resume',
   pages: state.getIn(['resume', 'pages']),
-  page: state.getIn(['resume', 'page'])
+  page: state.getIn(['resume', 'page']),
+  pixels: state.getIn(['resume', 'pixels'])
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -36,10 +38,11 @@ const mapDispatchToProps = dispatch => ({
   changePage: (item: number) => dispatch(Actions.changePage(item))
 });
 
-const getDocumentWidth = () => {
-  if (window.innerWidth <= 700) {
-    return window.innerWidth * .75 ;
+const getDocumentScale = (pixels: number) => {
+  if (pixels < 700) {
+    return (pixels / 700)  * .75;
   }
+  return 1;
 };
 
 const ResumeComponent = (props: ResumeProps) => (
@@ -64,7 +67,7 @@ const ResumeComponent = (props: ResumeProps) => (
       </span>
       <div className={styles.document}>
         <Document file={myResume} onLoadSuccess={props.addPages}>
-          <Page pageNumber={props.page} width={getDocumentWidth()}/>
+          <Page pageNumber={props.page} scale={getDocumentScale(props.pixels)}/>
         </Document>
       </div>
     </div>

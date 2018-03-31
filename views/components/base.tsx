@@ -6,9 +6,14 @@ import Banner from './banner';
 import Navigation from './navigation';
 import Portfolio from './portfolio';
 import Resume from './resume';
+import {resume as Actions} from '../actions';
 import * as styles from '../css/base.css';
 
 const store = createStore(appStore);
+
+window.onresize = () => (
+  store.dispatch(Actions.pageResize(window.innerWidth))
+);
 
 export const Base = () => (
   <Provider store={store}>

@@ -6,7 +6,7 @@ import Banner from './banner';
 import Navigation from './navigation';
 import Portfolio from './portfolio';
 import Resume from './resume';
-import Test from './wasmTest';
+//import Test from './wasmTest';
 import {resume as Actions} from '../actions';
 import * as styles from '../css/base.css';
 
@@ -23,7 +23,6 @@ export const Base = () => (
       <Navigation/>
       <Portfolio/>
       <Resume/>
-      <Test/>
     </div>
   </Provider>
 );

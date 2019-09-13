@@ -6,7 +6,8 @@ module.exports = {
         filename: '[name].min.js',
         chunkFilename: '[name].min.js',
         path: `${__dirname}/dist`,
-        publicPath: '/reesmanp.github.io/dist/'
+        publicPath: '/reesmanp.github.io/dist/',
+        webassemblyModuleFilename: "[modulehash].wasm"
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -20,8 +21,7 @@ module.exports = {
     module: {
         rules: [{
             test: /\.wasm$/,
-            include: `${__dirname}/views/wasm`,
-            use: 'wasm-loader'
+            type: "webassembly/experimental"
         }, {
             test: /\.css$/,
             include: `${__dirname}/views`,

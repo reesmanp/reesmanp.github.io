@@ -1,18 +1,13 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-import _jsonValidator from '../wasm/json-validator';
-
-let jsonValidator;
-_jsonValidator().then(instance => {
-    jsonValidator = instance.exports.jsonValidator;
-});
+import {greet} from '../../wasm/wasm-test/pkg';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = () => ({});
 
 const WASMTest = () => (
-  <div>{jsonValidator()}</div>
+  <div>{greet()}</div>
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(WASMTest);

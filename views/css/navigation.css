@@ -1,25 +1,36 @@
-.navbar {
+.navBar {
     display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.navItem {
+.navTab {
     flex-grow: 1;
     text-align: center;
+    display: flex;
+}
+
+.navTabLink {
+    flex-grow: 1;
     padding: 16px;
     border-right: 2px solid #00A06E;
     border-bottom: 2px solid #00A06E;
     border-left: 2px solid #00A06E;
-    cursor: pointer;
     background-color: white;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
 }
 
-.isActive {
-    color: white;
+.activeTab {
     background-color: #00A06E;
 }
+
+/*.navItem > a {*/
+/*    color: black;*/
+/*    font-weight: bold;*/
+/*}*/
 
 @media screen and (max-width: 556px) {
     .navbar {

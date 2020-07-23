@@ -11,6 +11,7 @@
 .buttonGroup {
     margin: 16px;
     display: flex;
+    font-weight: bold;
 }
 
 .button {
@@ -19,6 +20,7 @@
     background-color: white;
     padding: 8px 16px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .button:disabled {

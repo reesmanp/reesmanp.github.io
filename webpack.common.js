@@ -1,11 +1,13 @@
+const path = require('path');
+
 module.exports = {
     entry: {
-        portfolio: './views/index.tsx'
+        portfolio: path.resolve(__dirname, 'views', 'index.jsx')
     },
     output: {
         filename: '[name].min.js',
         chunkFilename: '[name].min.js',
-        path: `${__dirname}/dist`,
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/reesmanp.github.io/dist/'
     },
 
@@ -13,14 +15,13 @@ module.exports = {
     devtool: 'source-map',
 
     resolve: {
-        // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: ['.ts', '.tsx', '.js', '.json']
+        extensions: ['.js', '.jsx', '.json']
     },
 
     module: {
         rules: [{
             test: /\.css$/,
-            include: `${__dirname}/views`,
+            include: path.resolve(__dirname, 'views'),
             use: ['style-loader', {
                 loader: 'css-loader',
                 options: {
@@ -29,24 +30,22 @@ module.exports = {
             }]
         }, {
             test: /\.pdf$/,
-            include: `${__dirname}/static/images`,
+            include: path.resolve(__dirname, 'static', 'images'),
             use: 'file-loader'
         }, {
-            test: /\.tsx?$/,
-            include: `${__dirname}/views`,
-            use: 'awesome-typescript-loader'
+            test: /\.jsx$/,
+            include: path.resolve(__dirname, 'views'),
+            use: 'babel-loader'
         }, {
             enforce: 'pre',
             test: /\.js$/,
-            include: `${__dirname}/views`,
+            include: path.resolve(__dirname, 'views'),
             use: 'source-map-loader'
         }]
     },
 
     externals: {
         react: 'React',
-        'react-dom': 'ReactDOM',
-        'pdfjs-dist': 'pdfjsDistWebPdfViewer',
-        'pdfjs-dist/lib/web/pdf_link_service': 'pdfjsDistWebPdfViewer.PDFJS'
+        'react-dom': 'ReactDOM'
     },
 };

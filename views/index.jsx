@@ -12,8 +12,6 @@ import {
   Resume
 } from './components';
 
-// import { Base } from './components/base';
-
 
 function App() {
   return (
@@ -21,8 +19,15 @@ function App() {
       <Banner/>
       <Menu/>
       <Switch>
-        <Route exact path='/resume' component={Resume}/>
-        <Route path='/:tab' component={Portfolio}/>
+        <Route exact path='/resume'>
+          <Resume/>
+        </Route>
+        <Route path='/:tab'>
+          <Portfolio/>
+        </Route>
+        <Route>
+          <Portfolio/>
+        </Route>
       </Switch>
     </Router>
   );

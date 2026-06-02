@@ -1,6 +1,6 @@
 const HTML = document.documentElement;
 const MODE_BUTTONS = document.querySelectorAll("#mode-toggle button");
-const MODES = ["dev", "sales"];
+const MODES = ["dev", "professional"];
 const MODE_NAV_KEYS = ["ArrowLeft", "ArrowRight"];
 const STORAGE_KEY = "portfolio-mode";
 const URL_PARAM = "mode";
@@ -49,20 +49,23 @@ function getInitialMode() {
  */
 function setMode(rawMode) {
   const mode = normalizeMode(rawMode);
-  if (!mode) {
+  if (!mode || mode === HTML.dataset.mode) {
     return;
   }
 
-  HTML.dataset.mode = mode;
-  MODE_BUTTONS.forEach((btn) => {
-    btn.setAttribute("aria-pressed", String(btn.dataset.mode === mode));
+  document.startViewTransition(() => {
+    HTML.dataset.mode = mode;
+    MODE_BUTTONS.forEach((btn) => {
+      btn.setAttribute("aria-pressed", String(btn.dataset.mode === mode));
+    });
+
+    try {
+      localStorage.setItem(STORAGE_KEY, mode);
+    } catch (_) {
+      /* ignore */
+    }
   });
 
-  try {
-    localStorage.setItem(STORAGE_KEY, mode);
-  } catch (_) {
-    /* ignore */
-  }
 }
 
 /**

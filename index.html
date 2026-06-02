@@ -20,11 +20,11 @@
         href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,500&family=Spline+Sans:ital,wght@0,400;0,600;1,400&family=Spline+Sans+Mono:wght@400;500&display=swap" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/dev.css" />
-    <link rel="stylesheet" href="css/sales.css" />
+    <link rel="stylesheet" href="css/professional.css" />
 
     <script>
         (function () {
-            const modes = ["dev", "sales"];
+            const modes = ["dev", "professional"];
             const requestedMode = new URLSearchParams(location.search).get("mode")
                 || localStorage.getItem("portfolio-mode");
             const mode = modes.find(val => val === requestedMode) || modes[0];
@@ -49,9 +49,16 @@
 
 <body>
     <div id="wrapper">
+        <div class="term-bar" aria-hidden="true">
+            <span class="term-dot"></span>
+            <span class="term-dot"></span>
+            <span class="term-dot"></span>
+            <span class="term-title">guest@paul.reesman: /home/paul.reesman/workspace/personal/portfolio</span>
+        </div>
+
         <div id="mode-toggle" role="group" aria-label="Toggle views">
             <button id="mode-dev" data-mode="dev" aria-pressed="true" aria-label="Dev View">~/dev</button>
-            <button id="mode-sales" data-mode="sales" aria-pressed="false"
+            <button id="mode-professional" data-mode="professional" aria-pressed="false"
                 aria-label="Professional View">Professional</button>
         </div>
 

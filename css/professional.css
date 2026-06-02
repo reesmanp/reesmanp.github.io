@@ -1,4 +1,4 @@
-html[data-mode="sales"] {
+html[data-mode="professional"] {
     --bg: #f6f1e7;
     --surface: #ece4d3;
     --fg: #161312;
@@ -15,7 +15,8 @@ html[data-mode="sales"] {
 
     /* hide dev-only elements */
     #end,
-    .cmd {
+    .cmd,
+    .term-bar {
         display: none;
     }
 

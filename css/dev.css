@@ -16,7 +16,7 @@ html[data-mode="dev"] {
     font-family: var(--font-mono);
     line-height: 1.6;
 
-    /* hide sales-only elements */
+    /* hide professional-only elements */
     .heading {
         display: none;
     }
@@ -33,6 +33,46 @@ html[data-mode="dev"] {
         border: 2px solid var(--surface-border);
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .term-bar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 0.9rem;
+        background: var(--bg);
+        border-bottom: 1px solid var(--surface-border);
+    }
+
+    .term-bar .term-dot {
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+    }
+
+    .term-bar .term-dot:nth-child(1) {
+        background: #ff5f56;
+    }
+
+    .term-bar .term-dot:nth-child(2) {
+        background: #ffbd2e;
+    }
+
+    .term-bar .term-dot:nth-child(3) {
+        background: #27c93f;
+    }
+
+    .term-bar .term-title {
+        position: absolute;
+        inset-inline: 0;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 0.75rem;
+        color: var(--fg-subtle);
+        pointer-events: none;
     }
 
     main {

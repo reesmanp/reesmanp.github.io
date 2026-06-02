@@ -26,7 +26,7 @@ function normalizeMode(raw) {
  */
 function getInitialMode() {
   MODE_BUTTONS.forEach((btn) => {
-    btn.setAttribute("aria-pressed", String(btn.dataset.mode === mode));
+    btn.setAttribute("aria-pressed", String(btn.dataset.mode === HTML.dataset.mode));
   });
 
   const fromUrl = new URLSearchParams(window.location.search).get(URL_PARAM);

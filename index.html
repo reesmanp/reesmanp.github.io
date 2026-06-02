@@ -1,35 +1,361 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-mode="dev">
+
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175990716-1"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d1117">
+    <meta name="description"
+        content="Paul Reesman | Technical Founder, Software Architect, and 3.14x developer based in the PNW." />
+
+    <title>Paul Reesman | I Build the Weird, Secure, Regulated Stuff</title>
+
+    <link rel="icon" href="assets/images/favicon.ico" sizes="any">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,500&family=Spline+Sans:ital,wght@0,400;0,600;1,400&family=Spline+Sans+Mono:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/dev.css" />
+    <link rel="stylesheet" href="css/sales.css" />
+
+    <script>
+        (function () {
+            const modes = ["dev", "sales"];
+            const requestedMode = new URLSearchParams(location.search).get("mode")
+                || localStorage.getItem("portfolio-mode");
+            const mode = modes.find(val => val === requestedMode) || modes[0];
+
+            if (mode === modes[0]) {
+                window.history.replaceState({}, "", window.location.href.split("#")[0]);
+            }
+
+            document.documentElement.setAttribute("data-mode", mode);
+        })();
+    </script>
+    <script src="js/main.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z55ZGS0D5G"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', 'UA-175990716-1');
+        gtag('config', 'G-Z55ZGS0D5G');
     </script>
-    <!--Prevent compatibility mode-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!--Set character set-->
-    <meta charset="UTF-8">
-    <!--Set title-->
-    <title>Paul R. Reesman</title>
-    <!--Global styling-->
-    <style>
-        html { background-color: #f9f9f9; }
-        body { margin: 0; }
-    </style>
 </head>
+
 <body>
-    <div id="reactContainer"></div>
-    <!-- Dependencies -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.development.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.development.js"></script>
-    <script src="dist/portfolio.min.js" ></script>
-    <noscript>Please enable JavaScript in your browser! This webpage is built using ReactJS and needs to be able to run scripts in order to render this page properly.</noscript>
+    <div id="wrapper">
+        <div id="mode-toggle" role="group" aria-label="Toggle views">
+            <button id="mode-dev" data-mode="dev" aria-pressed="true" aria-label="Dev View">~/dev</button>
+            <button id="mode-sales" data-mode="sales" aria-pressed="false"
+                aria-label="Professional View">Professional</button>
+        </div>
+
+        <header class="brand">
+            <span class="brand-mark" aria-hidden="true">PR</span>
+            <span class="brand-name">Paul Reesman</span>
+            <nav id="brand-nav" class="nav" aria-label="Sections">
+                <a href="#hero" data-ext=".md">Intro</a>
+                <a href="#about" data-ext=".md">About</a>
+                <a href="#experience-projects" data-ext=".log">Experience</a>
+                <a href="#education" data-ext=".json">Education</a>
+                <a href="#technical-skills" data-ext=".json">Skills</a>
+                <a href="#contact-professional-links" data-ext=".sh">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <input type="checkbox" id="reveal-about" class="reveal-toggle">
+            <input type="checkbox" id="reveal-experience-projects" class="reveal-toggle" disabled>
+            <input type="checkbox" id="reveal-education" class="reveal-toggle" disabled>
+            <input type="checkbox" id="reveal-technical-skills" class="reveal-toggle" disabled>
+            <input type="checkbox" id="reveal-contact-professional-links" class="reveal-toggle" disabled>
+            <input type="checkbox" id="reveal-end" class="reveal-toggle" disabled>
+
+            <section id="hero" style="--cmd-chars: 14;">
+                <p class="eyebrow" aria-hidden="true"></p>
+                <p class="cmd"><span class="typed">cat README.md</span></p>
+                <h1 class="heading">I help teams turn <em>complicated software problems</em> into systems that
+                    <em>survive contact with reality</em>.
+                </h1>
+                <div class="body">
+                    <p class="lede">I&apos;ve spent my career building and explaining software in hard environments:
+                        <strong>HIPAA</strong>, <strong>FedRAMP</strong>, <strong>SOC 2</strong>, <strong>NIST
+                            800-171</strong>, <strong>AWS GovCloud</strong>, <strong>Kubernetes</strong>,
+                        <strong>air-gapped
+                            deployments</strong>, <strong>ML
+                            pipelines</strong>, <strong>high-traffic commerce</strong>, and <strong>early-stage
+                            startups</strong>. My favorite work lives at the
+                        intersection of engineering depth, customer trust, and operational reality.
+                    </p>
+                    <ul class="chips" aria-label="Focus areas">
+                        <li>Solutions Engineering</li>
+                        <li>Platform Architecture</li>
+                        <li>Enterprise SaaS</li>
+                        <li>Aerospace &amp; Defense</li>
+                        <li>ML / Data Platforms</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="about" class="revealable" style="--cmd-chars: 13;">
+                <p class="eyebrow" data-num="01" data-tagline="Background" aria-hidden="true"></p>
+                <p class="cmd"><span class="typed">cat About.md</span></p>
+                <h2 class="heading">About</h2>
+                <div class="body about-body">
+                    <div class="prose">
+                        <p>
+                            I work best in the space between engineering, product, customers, and the people who need
+                            the software to work when it matters.
+                        </p>
+                        <p>
+                            That has meant different things at different stages of my career: co-founding and
+                            architecting secure program management software for aerospace and defense; designing FedRAMP
+                            and GovCloud migration paths; building HIPAA-compliant patient data systems; improving
+                            high-traffic eCommerce platforms; creating machine-learning recommendation systems for news;
+                            and leading engineering teams through the less glamorous but critical work of security,
+                            compliance, reliability, and scale.
+                        </p>
+                        <p>
+                            I&apos;m comfortable going deep technically, but I&apos;m just as interested in making the
+                            technical work legible: to customers, executives, product teams, auditors, engineers, and
+                            anyone else who needs to make a decision. I like diagrams, tradeoffs, working demos, clear
+                            docs, and blunt conversations about what a system can and cannot do.
+                        </p>
+                        <p>
+                            Before software, I served as a Forward Observer in 2nd Ranger Battalion. That experience
+                            still shapes how I work: plan carefully, communicate clearly, adapt quickly, and stay calm
+                            when the plan changes.
+                        </p>
+                    </div>
+                    <aside class="card">
+                        <h3>Useful when the problem includes</h3>
+                        <ul>
+                            <li>Complex technical discovery</li>
+                            <li>Customer-facing architecture</li>
+                            <li>Regulated and secure environments</li>
+                            <li>Engineering tradeoffs that need executive clarity</li>
+                            <li>A demo that has to become a real implementation</li>
+                            <li>Explainable, deployable, defensible systems</li>
+                        </ul>
+                    </aside>
+                </div>
+            </section>
+
+            <section id="experience-projects" class="revealable" style="--cmd-chars: 75;">
+                <p class="eyebrow" data-num="02" data-tagline="Where I&apos;ve Been" aria-hidden="true"></p>
+                <p class="cmd"><span class="typed">git --no-pager log --author=paul.reesman
+                        --pretty=format:"%ad%n%s%n%d%b%n"</span></p>
+                <h2 class="heading">Experience</h2>
+                <div class="body">
+                    <ol class="timeline">
+                        <li>
+
+                            <p class="when">2024 &mdash; present</p>
+                            <h3 class="role">Solutions Engineer / Federal Solutions Architect</h3>
+                            <p class="org">Second Front Systems</p>
+                            <p class="what">I work with public sector, commercial, and regulated customers to map
+                                mission needs onto secure software delivery platforms.
+
+                                Focus areas include customer discovery, technical architecture, DevSecOps, compliance,
+                                Kubernetes, containerization, RMF, ATO, AWS GovCloud, air-gapped deployments, and
+                                turning complex deployment constraints into workable paths forward.</p>
+                        </li>
+                        <li>
+                            <p class="when">2022 &mdash; 2024</p>
+                            <h3 class="role">Co-Founder &amp; Chief Architect</h3>
+                            <p class="org">Integrate</p>
+                            <p class="what">Co-founded and led engineering for a secure program management platform
+                                serving aerospace and defense customers. Took the product from initial architecture
+                                through multiple funding rounds while managing a small, high-performing engineering
+                                team.
+
+                                Designed multi-tenant services, a robust RBAC model, data observability pipelines, and
+                                secure deployment patterns. Led SOC 2 and NIST 800-171 compliance efforts and kept the
+                                engineering work tied to customer and business reality.</p>
+                        </li>
+                        <li>
+                            <p class="when">2021 &mdash; 2022</p>
+                            <h3 class="role">Senior Machine Learning Engineer</h3>
+                            <p class="org">NBCUniversal / NBC News</p>
+                            <p class="what">Built and improved data and machine-learning systems for personalized news
+                                experiences. Refactored Kafka ingest and Airflow pipelines, designed a Kubernetes-hosted
+                                recommendation platform using AWS Personalize, and helped increase article interactions
+                                by roughly 10%.
+
+                                Led recurring lunch-and-learns between BI and engineering to improve shared
+                                understanding across teams working with data, product behavior, and audience insights.
+                            </p>
+                        </li>
+                        <li>
+                            <p class="when">2019 &mdash; 2021</p>
+                            <h3 class="role">Senior Software Development Engineer</h3>
+                            <p class="org">Smartsheet</p>
+                            <p class="what">Led projects across data migration, platform services, and customer-facing
+                                tooling. Built a near real-time asynchronous update service for complex data trees,
+                                improving update throughput by nearly 33%.
+
+                                Also developed customer tools that reduced related support tickets by about 75%, and
+                                built FedRAMP-compliant migration tooling for moving customers from commercial AWS into
+                                AWS GovCloud.</p>
+                        </li>
+                        <li>
+                            <p class="when">2017 &mdash; 2019</p>
+                            <h3 class="role">Engineer II</h3>
+                            <p class="org">Nordstrom</p>
+                            <p class="what">Worked on high-traffic eCommerce systems where performance, reliability, and
+                                customer experience had direct business impact.
+
+                                Rebuilt frontend and backend systems for maintainability, supported pages handling up to
+                                150k requests per minute, helped deliver experiments tied to more than $100M in revenue,
+                                and led regular engineering lunch-and-learns.</p>
+                        </li>
+                        <li>
+                            <p class="when">2016 &mdash; 2018</p>
+                            <h3 class="role">Co-Founder</h3>
+                            <p class="org">Lender</p>
+                            <p class="what">Designed and built the backend architecture for an early-stage lending
+                                application using MongoDB, Hapi, React, and Node.
+
+                                Focused on creating a secure, scalable foundation from the start rather than bolting
+                                security on later.</p>
+                        </li>
+                        <li>
+                            <p class="when">2016 &mdash; 2017</p>
+                            <h3 class="role">Application Developer</h3>
+                            <p class="org">Seattle Children&rsquo;s Hospital</p>
+                            <p class="what">Built HIPAA-compliant healthcare software for patient-provider data sharing.
+
+                                Designed microservices for managing patient data and integrated data ingest workflows
+                                with other HIE teams using ObjectScript and SAML.</p>
+                        </li>
+                        <li>
+                            <p class="when">2016 &mdash; 2017</p>
+                            <h3 class="role">Instructor</h3>
+                            <p class="org">Coding With Kids</p>
+                            <p class="what">Taught computer science fundamentals to students from elementary through
+                                high school, including Scratch, Python, JavaScript, HTML, and CSS.
+
+                                Helped younger students build confidence with programming and gave older students a
+                                clearer path into real software development.</p>
+                        </li>
+                        <li>
+                            <p class="when">2008 &mdash; 2012</p>
+                            <h3 class="role">U.S. Army Ranger &mdash; Forward Observer</h3>
+                            <p class="org">2nd Battalion, 75th Ranger Regiment</p>
+                            <p class="what">Served as a Forward Observer in the 75th Ranger Regiment.
+
+                                Learned how to operate in high-pressure environments, communicate clearly under
+                                uncertainty, and make decisions when conditions change faster than the plan.</p>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="education" class="revealable" style="--cmd-chars: 22;">
+                <p class="eyebrow" data-num="03" data-tagline="Studies" aria-hidden="true"></p>
+                <p class="cmd"><span class="typed">jq &apos;.&apos; Education.json</span></p>
+                <h2 class="heading">Education</h2>
+                <div class="body">
+                    <dl class="schools" style="--indent-chars: 4;">
+                        <dt class="school">Johns Hopkins University</dt>
+                        <dd>
+                            <dl class="fields" style="--indent-chars: 8;">
+                                <dt>Degree</dt>
+                                <dd>M.S. Computer Science</dd>
+                                <dt>When</dt>
+                                <dd>2019-2020</dd>
+                            </dl>
+                        </dd>
+                        <dt class="school">Oregon State University</dt>
+                        <dd>
+                            <dl class="fields" style="--indent-chars: 8;">
+                                <dt>Degree</dt>
+                                <dd>B.S. Computer Science</dd>
+                                <dt>When</dt>
+                                <dd>2014-2015</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                </div>
+            </section>
+
+            <section id="technical-skills" class="revealable" style="--cmd-chars: 19;">
+                <p class="eyebrow" data-num="04" data-tagline="Capabilities" aria-hidden="true"></p>
+                <p class="cmd"><span class="typed">jq &apos;.&apos; Skills.json</span></p>
+                <h2 class="heading">Technical Skills</h2>
+                <div class="body">
+                    <dl class="skills" style="--indent-chars: 4;">
+                        <dt>Architecture &amp; Platforms</dt>
+                        <dd>Multi-tenant SaaS &middot; Distributed systems &middot; Platform architecture &middot; API
+                            design &middot; RBAC &middot; Data observability &middot; System integration</dd>
+
+                        <dt>Cloud, Infrastructure, &amp; DevSecOps</dt>
+                        <dd>AWS &middot; AWS GovCloud &middot; Kubernetes &middot; Docker &middot; Terraform &middot;
+                            CloudWatch &middot; Grafana &middot; Datadog &middot; CI/CD &middot;
+                            Container scanning &middot; Air-gapped and regulated deployments</dd>
+
+                        <dt>Security &amp; Compliance</dt>
+                        <dd>SOC 2 &middot; NIST 800-171 &middot; FedRAMP environments &middot; RMF &middot; ATO support
+                            &middot; HIPAA &middot; ITAR-aware
+                            workflows &middot; Secure SDLC</dd>
+
+                        <dt>Data &amp; ML</dt>
+                        <dd>Kafka &middot; Airflow &middot; PySpark &middot; PostgreSQL &middot; Redis &middot; AWS
+                            Personalize &middot; ML recommendation systems &middot; Data pipelines</dd>
+
+                        <dt>Languages &amp; Frameworks</dt>
+                        <dd>Rust &middot; Go &middot; TypeScript &middot; SQL &middot; JavaScript &middot; Python
+                            &middot; Node.js &middot; React &middot; Next.js &middot; HTML &middot; CSS</dd>
+
+                        <dt>Domains</dt>
+                        <dd>Regulated SaaS &middot; Defense &amp; aerospace &middot; Public sector &middot; Healthcare
+                            &middot; eCommerce</dd>
+                    </dl>
+                </div>
+            </section>
+
+            <section id="contact-professional-links" class="revealable" style="--cmd-chars: 13;">
+                <p class="eyebrow" data-num="05" data-tagline="Get in Touch" aria-hidden="true"></p>
+                <p class="cmd"><span class="typed">./Contact.sh</span></p>
+                <h2 class="heading">Contact</h2>
+                <div class="body">
+                    <p class="lede">I&apos;m usually most useful when the problem involves complex software, regulated
+                        environments, customer trust, and enough ambiguity that someone needs to turn it into a plan.
+
+                        Reach out if you&apos;re building something technical that needs to be explained clearly,
+                        deployed securely, or made real without hand-waving.</p>
+                    <ul class="links">
+                        <li>
+                            <a href="https://www.linkedin.com/in/paulreesman/" target="_blank" rel="noopener noreferrer"
+                                aria-describedby="linkedin-link-help">
+                                <span class="link-label">LinkedIn</span>
+                                <span class="link-value">/in/paulreesman</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/reesmanp" target="_blank" rel="noopener noreferrer"
+                                aria-describedby="github-link-help">
+                                <span class="link-label">GitHub</span>
+                                <span class="link-value">/reesmanp</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="end" class="revealable" style="--cmd-chars: 1;">
+                <p class="eyebrow" data-num="06" data-tagline="" aria-hidden="true"></p>
+                <p class="cmd"><span class="typed"></span></p>
+            </section>
+        </main>
+        <div id="linkedin-link-help" style="font-size: 0;">Open LinkedIn profile in a new tab</div>
+        <div id="github-link-help" style="font-size: 0;">Open GitHub profile in a new tab</div>
+    </div>
 </body>
+
 </html>

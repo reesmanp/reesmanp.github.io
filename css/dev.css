@@ -1,0 +1,543 @@
+html[data-mode="dev"] {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --fg: #c9d1d9;
+    --fg-subtle: #8b949e;
+    --link: #79c0ff;
+    --accent: #7ee787;
+    --emphasis: #d2a8ff;
+    --strong: #f0883e;
+    --fg-muted: #8b949e;
+    --surface-border-accent: #daa520;
+    --surface-border: #30363d;
+
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-mono);
+    line-height: 1.6;
+
+    /* hide sales-only elements */
+    .heading {
+        display: none;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    #wrapper {
+        background-color: var(--surface);
+        overflow-y: scroll;
+        max-width: 75rem;
+        height: 85%;
+        border: 2px solid var(--surface-border);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    main {
+        margin: 0 auto;
+        padding: 0 1.5rem 5rem;
+    }
+
+    #mode-toggle {
+        background: var(--surface);
+        border: 1px solid var(--surface-border-accent);
+    }
+
+    #mode-toggle button {
+        color: var(--fg-subtle);
+    }
+
+    #mode-toggle button[aria-pressed="true"] {
+        background: var(--surface);
+        color: var(--accent);
+    }
+
+    ::selection {
+        background: var(--link);
+        color: var(--bg);
+    }
+
+    .brand {
+        margin: 1.5rem auto 0;
+        padding: 0 1.5rem 0;
+    }
+
+    .brand-mark {
+        visibility: hidden;
+        display: flex;
+    }
+
+    .brand-mark::before {
+        content: "---\A"
+            attr(data-time-pst) "\A"
+            attr(data-time-local) "\A"
+            "[ No VCS Detected ]\A"
+            "guest@paul.reesman :: ~";
+        color: var(--strong);
+        visibility: visible;
+        white-space: pre;
+        display: block;
+    }
+
+    .brand-name {
+        visibility: hidden;
+        font-size: 0;
+    }
+
+    .brand-name::after {
+        content: "> ";
+        color: var(--accent);
+        visibility: visible;
+        display: inline;
+        font-size: initial;
+    }
+
+    .nav {
+        display: contents;
+        color: var(--fg-subtle);
+    }
+
+    .nav::before {
+        content: "cd /home/paul.reesman/workspace/personal/portfolio && ls -la sections";
+        white-space: pre;
+        color: var(--fg);
+    }
+
+    .nav a {
+        display: block;
+        color: var(--link);
+        text-decoration: none;
+        margin-right: 1.5em;
+    }
+
+    .nav a:first-child {
+        font-size: 0;
+    }
+
+    .nav a:first-child::after {
+        content: "README.md";
+        font-size: initial;
+    }
+
+    .nav a::before {
+        content: "drwxr-xr-x  paul  staff  ";
+        color: var(--fg-subtle);
+        margin-right: 0.5em;
+        font-size: initial;
+    }
+
+    .nav a:not(:first-child)::after {
+        content: attr(data-ext);
+    }
+
+    .nav a:hover {
+        color: var(--link);
+        cursor: default;
+        text-decoration: none;
+    }
+
+    .revealable {
+        display: none;
+    }
+
+    /* reveal: show the next prompt when previous body is shown */
+    #hero {
+        display: block;
+
+        .body {
+            display: none;
+        }
+    }
+
+    /* reveal: show the section whose toggle is checked */
+    #reveal-about:checked~#about,
+    #reveal-experience-projects:checked~#experience-projects,
+    #reveal-education:checked~#education,
+    #reveal-technical-skills:checked~#technical-skills,
+    #reveal-contact-professional-links:checked~#contact-professional-links,
+    #reveal-end:checked~#end {
+        display: block;
+
+        .body {
+            display: none;
+        }
+    }
+
+    /* reveal: show body of previous section, turn off previous cursor */
+    #reveal-about:checked~#hero,
+    #reveal-experience-projects:checked~#about,
+    #reveal-education:checked~#experience-projects,
+    #reveal-technical-skills:checked~#education,
+    #reveal-contact-professional-links:checked~#technical-skills,
+    #reveal-end:checked~#contact-professional-links {
+        .body {
+            display: block;
+        }
+
+        .typed::after {
+            display: none;
+        }
+    }
+
+    .eyebrow {
+        font-family: var(--font-mono);
+        color: var(--fg-subtle);
+        white-space: pre;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .eyebrow::before {
+        content:
+            "---\A"
+            attr(data-time-pst) "\A"
+            attr(data-time-local) "\A"
+            "[git :: main] ✔\A"
+            "guest@paul.reesman :: /home/paul.reesman/workspace/personal/portfolio";
+        white-space: pre;
+        color: var(--strong);
+    }
+
+    .cmd {
+        font-family: var(--font-mono);
+        color: var(--fg-subtle);
+        margin: 0 0 1rem;
+        white-space: pre;
+        line-height: 1.5;
+    }
+
+    .cmd::before {
+        content: "> ";
+        color: var(--accent);
+    }
+
+    .typed {
+        color: var(--fg);
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        vertical-align: bottom;
+        width: 0;
+        animation: type-cmd calc(var(--cmd-chars) * 60ms) linear forwards;
+    }
+
+    .typed::after {
+        content: "";
+        display: inline-block;
+        width: 0.55em;
+        height: 1.05em;
+        background: var(--accent);
+        vertical-align: text-bottom;
+        animation: blink-cursor 1.15s step-end infinite;
+        animation-delay: calc(var(--cmd-chars) * 60ms + 250ms);
+    }
+
+    .body p {
+        margin: 0 0 1em;
+    }
+
+    .body a {
+        color: var(--link);
+    }
+
+    .body strong {
+        color: var(--strong);
+        font-weight: 500;
+    }
+
+    .body em {
+        color: var(--emphasis);
+        font-style: normal;
+    }
+
+    #hero .lede {
+        color: var(--fg);
+    }
+
+    .chips {
+        list-style: none;
+    }
+
+    .chips li {
+        padding: 2px 0.5rem;
+    }
+
+    .chips li::before {
+        content: "* ";
+        color: var(--accent);
+    }
+
+    .about-body {
+        display: grid;
+        gap: 1.5em;
+    }
+
+    .about-body strong::before {
+        content: "*";
+        color: var(--strong);
+    }
+
+    .about-body strong::after {
+        content: "*";
+        color: var(--strong);
+    }
+
+    .about-body em::before {
+        content: "_";
+        color: var(--emphasis);
+    }
+
+    .about-body em::after {
+        content: "_";
+        color: var(--emphasis);
+    }
+
+    .about-body a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+    .about-body a:hover {
+        color: var(--accent);
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .about-body a::before {
+        content: "[";
+        color: var(--accent);
+    }
+
+    .about-body a::after {
+        content: "](" attr(href) ")";
+        color: var(--accent);
+    }
+
+    .about-body h1,
+    .about-body h2,
+    .about-body h3 {
+        margin: 0 0 0.5em;
+        font-size: 0.85em;
+        color: var(--link);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    .about-body h1::before {
+        content: "# ";
+    }
+
+    .about-body h2::before {
+        content: "## ";
+    }
+
+    .about-body h3::before {
+        content: "### ";
+    }
+
+    .about-body .card ul {
+        list-style: none;
+    }
+
+    .about-body .card li::before {
+        content: "* ";
+        color: var(--accent);
+    }
+
+    .timeline {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .timeline li {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.25em;
+        padding: 0.5em 0;
+        border-left: 2px solid var(--surface-border-accent);
+        padding-inline-start: 1em;
+        margin-bottom: 0.75em;
+    }
+
+    .timeline .when {
+        font-size: 0.8em;
+        color: var(--fg-muted);
+        margin: 0;
+    }
+
+    .timeline .role {
+        font-size: 1em;
+        font-weight: 500;
+        color: var(--fg);
+        margin: 0;
+    }
+
+    .timeline .org {
+        font-size: 0.85em;
+        color: var(--link);
+        margin: 0;
+    }
+
+    .timeline .org::before {
+        content: "(";
+        color: var(--fg-subtle);
+    }
+
+    .timeline .org::after {
+        content: ")";
+        color: var(--fg-subtle);
+    }
+
+    .timeline .what {
+        margin: 0.25em 0 0;
+        color: var(--fg);
+    }
+
+    .schools {
+        margin: 0;
+    }
+
+    .schools .school {
+        font-weight: 500;
+        display: inline;
+        margin: 0;
+    }
+
+    .schools .school::before {
+        content: "\00a0\00a0\00a0\00a0\"";
+        color: var(--strong);
+    }
+
+    .schools .school::after {
+        content: "\": ";
+        color: var(--strong);
+    }
+
+    .schools>dd {
+        display: inline;
+        margin: 0;
+        padding-inline-start: calc(var(--indent-chars) * 1ch);
+    }
+
+    .schools>dd::before {
+        content: "{";
+        color: var(--accent);
+    }
+
+    .schools>dd:not(:last-child)::after {
+        content: "\00a0\00a0\00a0\00a0},\A";
+        white-space: pre;
+        color: var(--accent);
+    }
+
+    .schools>dd:last-child::after {
+        content: "\00a0\00a0\00a0\00a0}";
+        white-space: pre;
+        color: var(--accent);
+    }
+
+    .schools .fields dd {
+        margin: 0;
+        grid-column-start: 2;
+    }
+
+    .skills,
+    .schools .fields {
+        display: grid;
+        grid-template-columns: max-content auto;
+        gap: 1rem;
+        padding: 0.3rem 0;
+        margin: 0;
+    }
+
+    .skills dt,
+    .schools .fields dt {
+        font-weight: 500;
+        grid-column-start: 1;
+        padding-inline-start: calc(var(--indent-chars) * 1ch);
+    }
+
+    .skills dt::before,
+    .schools .fields dt::before {
+        content: "\"";
+        color: var(--strong);
+    }
+
+    .skills::before,
+    .schools::before {
+        content: "{";
+        display: block;
+        color: var(--accent);
+    }
+
+    .skills::after,
+    .schools::after {
+        content: "}";
+        display: block;
+        color: var(--accent);
+    }
+
+    .skills dd:not(:last-child)::after,
+    .schools .fields dd:not(:last-child)::after {
+        content: "\",";
+        color: var(--strong);
+    }
+
+    .skills dd:last-child::after,
+    .skills dd::before,
+    .schools .fields dd:last-child::after,
+    .schools .fields dd::before {
+        content: "\"";
+        color: var(--strong);
+    }
+
+    .skills dt::after,
+    .schools .fields dt::after {
+        content: "\":";
+        color: var(--strong);
+    }
+
+    .skills dd {
+        margin: 0;
+        color: var(--fg);
+        grid-column-start: 2;
+    }
+
+    .links {
+        list-style: none;
+        padding: 0;
+        margin: 1em 0 0;
+        display: grid;
+        gap: 0.4em;
+    }
+
+    .links>li {
+        width: 17.5rem;
+    }
+
+    .links a {
+        display: grid;
+        grid-template-columns: 6.25rem 1fr;
+        gap: 1em;
+        text-decoration: none;
+        padding: 0.4em 0.6em;
+        border: 1px solid var(--surface-border-accent);
+        border-radius: 0.25rem;
+        background: var(--surface);
+    }
+
+    .links a:hover {
+        border-color: var(--accent);
+    }
+
+    .link-label {
+        color: var(--fg);
+    }
+
+    .link-value {
+        color: var(--link);
+    }
+}

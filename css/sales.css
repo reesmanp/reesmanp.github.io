@@ -1,0 +1,489 @@
+html[data-mode="sales"] {
+    --bg: #f6f1e7;
+    --surface: #ece4d3;
+    --fg: #161312;
+    --fg-muted: #3a322e;
+    --surface-border: #2a221e;
+    --accent: #c2410c;
+    --fg-subtle: #6b5f55;
+
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.65;
+
+    /* hide dev-only elements */
+    #end,
+    .cmd {
+        display: none;
+    }
+
+    body {
+        overflow-y: scroll;
+    }
+
+    #wrapper {
+        max-width: 75rem;
+        border: 1px solid var(--surface-border);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    main {
+        margin: 0 auto;
+        padding: 0 1.5rem 5rem;
+    }
+
+    .revealable {
+        display: block;
+    }
+
+    #mode-toggle {
+        background: rgba(246, 241, 231, 0.85);
+        border: 1px solid var(--surface-border);
+    }
+
+    #mode-toggle button {
+        color: var(--fg-subtle);
+    }
+
+    #mode-toggle button[aria-pressed="true"] {
+        background: var(--fg);
+        color: var(--bg);
+    }
+
+    ::selection {
+        background: var(--accent);
+        color: var(--bg);
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.75rem clamp(1.25rem, 6vw, 5rem) 1.125rem;
+        border-bottom: 1px solid var(--surface-border);
+    }
+
+    .brand-mark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        background: var(--fg);
+        color: var(--bg);
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 0.875rem;
+        border-radius: 0.25rem;
+    }
+
+    .brand-name {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    .nav {
+        margin-left: auto;
+        display: flex;
+        gap: 1.75rem;
+        font-size: 0.875rem;
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: var(--fg-muted);
+        padding: 0.25rem 0;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s ease, color 0.2s ease;
+    }
+
+    .nav a:hover {
+        color: var(--accent);
+        border-color: var(--accent);
+    }
+
+    :is(.eyebrow, .about-body .card h3, .skills dt, .link-label) {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+    }
+
+    .eyebrow {
+        margin: 0 0 1.75rem;
+    }
+
+    .eyebrow::before {
+        content: attr(data-num) " · " attr(data-tagline);
+    }
+
+    #hero {
+        padding: 3.75rem 0 5rem;
+    }
+
+    #hero .eyebrow::before {
+        content: "Solutions Engineering · Architecture · Seattle, WA";
+    }
+
+    .heading {
+        font-family: var(--font-display);
+        font-weight: 500;
+        line-height: 1.05;
+        letter-spacing: -0.015em;
+        margin: 0 0 1.75rem;
+    }
+
+    #hero .heading {
+        font-size: clamp(2.5rem, 6.4vw, 5.25rem);
+        font-variation-settings: "opsz" 72;
+    }
+
+    #hero .heading em {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 500;
+    }
+
+    section:not(#hero) .heading {
+        font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    section:not(#hero) {
+        padding: 2rem 0 4rem;
+        border-top: 1px solid var(--surface-border);
+    }
+
+    section:not(#hero) .eyebrow {
+        margin-inline: auto;
+        width: fit-content;
+    }
+
+    section:not(#hero) .heading {
+        display: inline;
+    }
+
+    section:not(#hero) .body {
+        margin-top: 3rem;
+    }
+
+    /* body */
+    .body p {
+        margin: 0 0 1em;
+        color: var(--fg-muted);
+    }
+
+    .body p strong {
+        color: var(--fg);
+        font-weight: 600;
+    }
+
+    .body em {
+        color: var(--accent);
+        font-style: italic;
+    }
+
+    .body a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid currentColor;
+    }
+
+    .lede {
+        font-size: clamp(18px, 2vw, 22px);
+        max-width: 42.5rem;
+        color: var(--fg-muted);
+        margin: 0 0 2.25rem;
+    }
+
+    .chips {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .chips li {
+        padding: 0.375rem 0.75rem;
+        border: 1px solid var(--surface-border);
+        border-radius: 999px;
+        font-size: 0.813rem;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .chips li:hover {
+        background: var(--fg);
+        color: var(--bg);
+        cursor: default;
+    }
+
+    .about-body {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr;
+        gap: 3.5rem;
+    }
+
+    .about-body .card {
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        padding: 1.75rem;
+        border-radius: 0.25rem;
+        font-size: 0.875rem;
+    }
+
+    .about-body .card h3 {
+        margin: 0 0 0.75rem;
+    }
+
+    .about-body .card ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .about-body .card li {
+        padding: 0.375rem 0;
+        border-bottom: 1px dashed var(--surface-border);
+    }
+
+    .about-body .card li:last-child {
+        border-bottom: 0;
+    }
+
+    .timeline {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: relative;
+    }
+
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 8.125rem;
+        top: 0.5rem;
+        bottom: 0.5rem;
+        width: 1px;
+        background: var(--surface-border);
+    }
+
+    .timeline li {
+        display: grid;
+        grid-template-columns: 8.125rem 1fr;
+        gap: 2.25rem;
+        padding: 1.25rem 0 1.75rem;
+        position: relative;
+    }
+
+    .timeline li::before {
+        content: "";
+        position: absolute;
+        left: 7.75rem;
+        top: 1.75rem;
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+        background: var(--bg);
+        border: 2px solid var(--accent);
+    }
+
+    .timeline li:first-child::before {
+        background: var(--accent);
+    }
+
+    .timeline .when {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        padding-top: 1.75rem;
+        color: var(--fg-subtle);
+    }
+
+    .timeline .role,
+    .timeline .org,
+    .timeline .what {
+        grid-column: 2;
+    }
+
+    .timeline .role {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: 1.375rem;
+        margin: 0 0 0.25rem;
+    }
+
+    .timeline .org {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--accent);
+        margin: 0 0 0.625rem;
+    }
+
+    .timeline .what {
+        margin: 0;
+        color: var(--fg-muted);
+    }
+
+    .schools {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .schools dl {
+        padding: 0.75rem 0;
+        border-bottom: 1px dashed var(--surface-border);
+    }
+
+    .schools dl:last-child {
+        border-bottom: 0;
+    }
+
+    .schools .school {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: 1.375rem;
+        margin: 0;
+        display: inline;
+    }
+
+    .schools .fields {
+        display: grid;
+        grid-template-columns: max-content auto;
+        gap: 1em;
+        padding: 0.3em 0;
+        margin-left: 0.75rem;
+        color: var(--fg-subtle);
+        font-size: 0.938rem;
+    }
+
+    .schools .fields dt {
+        grid-column-start: 1;
+    }
+
+    .schools .fields dt::before {
+        content: "▸ ";
+    }
+
+    .schools .fields dd {
+        grid-column-start: 2;
+    }
+
+    .skills {
+        display: grid;
+        grid-template-columns: max-content auto;
+        gap: 1.5rem;
+        margin: 0;
+    }
+
+    .skills dt {
+        grid-column-start: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .skills dt::before {
+        content: "▸ ";
+    }
+
+    .skills dd {
+        grid-column-start: 2;
+        margin: 0;
+        font-size: 1rem;
+        color: var(--fg-muted);
+    }
+
+    .links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+        border-top: 1px solid var(--surface-border);
+    }
+
+    .links li:first-child {
+        border-left: 1px solid var(--surface-border);
+    }
+
+    .links li {
+        border-bottom: 1px solid var(--surface-border);
+        border-right: 1px solid var(--surface-border);
+    }
+
+    .links a {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 1.125rem 0.25rem;
+        text-decoration: none;
+        color: var(--fg);
+        position: relative;
+        overflow: hidden;
+        transition: padding 0.25s ease, color 0.25s ease;
+        align-items: center;
+    }
+
+    .links a::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--fg);
+        transform: translateY(101%);
+        transition: transform 0.3s ease;
+        z-index: -1;
+    }
+
+    .links a:hover {
+        padding-left: 0.875rem;
+        color: var(--bg);
+    }
+
+    .links a:hover::before {
+        transform: translateY(0);
+    }
+
+    .link-value {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+    }
+
+    @media (max-width: 760px) {
+        .brand {
+            flex-wrap: wrap;
+        }
+
+        .nav {
+            width: 100%;
+            gap: 1.125rem;
+        }
+
+        .about-body {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .timeline::before {
+            left: 0.5rem;
+        }
+
+        .timeline li {
+            grid-template-columns: 1fr;
+            gap: 0.375rem;
+            padding-left: 1.75rem;
+        }
+
+        .timeline li::before {
+            left: 1px;
+            top: 0.375rem;
+        }
+
+        .timeline .when {
+            padding-top: 0;
+        }
+    }
+}

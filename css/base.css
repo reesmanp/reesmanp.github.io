@@ -1,0 +1,85 @@
+:root {
+    --font-mono: "Spline Sans Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --font-display: "Newsreader", "Times New Roman", serif;
+    --font-body: "Spline Sans", system-ui, -apple-system, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    padding: 6.5rem 5rem 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* checkboxes never visible in either view */
+.reveal-toggle {
+    display: none;
+}
+
+#mode-toggle {
+    position: fixed;
+    inset-block-start: 1.5rem;
+    inset-inline-end: 5rem;
+    z-index: 50;
+    display: inline-flex;
+    padding: 0.5rem;
+    border-radius: 999px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+}
+
+#mode-toggle button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    padding: 0.5rem 0.875rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+}
+
+#mode-toggle button:hover:not([aria-pressed="true"]) {
+    opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+@keyframes type-cmd {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: calc(var(--cmd-chars) * 1ch);
+    }
+}
+
+@keyframes blink-cursor {
+    50% {
+        opacity: 0;
+    }
+}
